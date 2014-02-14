@@ -1,6 +1,5 @@
 package lpostula.gameengine;
 
-import javafx.animation.Animation;
 import javafx.scene.Node;
 
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ import java.util.List;
  * Documentation de la classe Sprite
  */
 public abstract class Sprite {
-    protected List animations = new ArrayList<Animation>();
+    protected List animations = new ArrayList<>();
     protected Node node;
     protected double vX;
     protected double vY;
