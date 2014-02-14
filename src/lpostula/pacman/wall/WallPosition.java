@@ -15,5 +15,9 @@ public enum WallPosition {
     CORNERUPLEFT,
     CORNERUPRIGHT,
     CORNERDOWNRIGHT,
-    CORNERDOWNLEFT
+    CORNERDOWNLEFT,
+    TLEFT,
+    TUP,
+    TRIGHT,
+    TDOWN
 }
