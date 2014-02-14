@@ -11,7 +11,7 @@ public class SpriteManager {
     private final static List CHECK_COLLISION_LIST = new ArrayList<>();
     private final static Set CLEAN_UP_SPRITES = new HashSet<>();
 
-    public List getAllSprites() {
+    public List<Sprite> getAllSprites() {
         return GAME_ACTORS;
     }
 
@@ -33,7 +33,7 @@ public class SpriteManager {
         } else CLEAN_UP_SPRITES.add(sprites[0]);
     }
 
-    public List getCollisionsToCheck() {
+    public List<Sprite> getCollisionsToCheck() {
         return CHECK_COLLISION_LIST;
     }
 
