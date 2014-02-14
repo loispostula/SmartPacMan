@@ -4,7 +4,7 @@ package lpostula.pacman.wall;
  * Created by lpostula on 14/02/14.
  * Documentation de la classe UpConnectedWall
  */
-public class UpConnectedWall extends SingleConnectedWall {
+public class UpConnectedWall extends RectangleWall {
 
     public UpConnectedWall(double dimension) {
         super(dimension);

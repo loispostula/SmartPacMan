@@ -8,7 +8,7 @@ import lpostula.pacman.PacMan;
  * Created by lpostula on 14/02/14.
  * Documentation de la classe LeftConnectedWall
  */
-public class LeftConnectedWall extends SingleConnectedWall {
+public class LeftConnectedWall extends RectangleWall {
 
     public LeftConnectedWall(double dimension) {
         super(dimension);

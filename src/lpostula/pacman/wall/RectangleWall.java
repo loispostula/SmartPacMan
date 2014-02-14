@@ -4,15 +4,15 @@ import javafx.scene.canvas.Canvas;
 
 /**
  * Created by lpostula on 14/02/14.
- * Documentation de la classe SingleConnectedWall
+ * Documentation de la classe RectangleWall
  */
-public abstract class SingleConnectedWall extends Wall {
+public abstract class RectangleWall extends Wall {
     protected double xBoundMin;
     protected double xBoundMax;
     protected double yBoundMin;
     protected double yBoundMax;
 
-    public SingleConnectedWall(double dimension) {
+    public RectangleWall(double dimension) {
         super(dimension);
     }
 
