@@ -40,10 +40,12 @@ public class PacManWorld extends GameWorld {
         getSceneNodes().getChildren().add(0, pacman.node);
 
 
-        addWall(WallPosition.CORNERUPLEFT, 20, 120, 120);
-        addWall(WallPosition.CORNERUPRIGHT, 20, 100, 120);
-        addWall(WallPosition.CORNERDOWNRIGHT, 20, 100, 100);
-        addWall(WallPosition.CORNERDOWNLEFT, 20, 120, 100);
+        addWall(WallPosition.CROSS, 100, 150, 150);
+        addWall(WallPosition.LEFT, 100, 250, 150);
+        addWall(WallPosition.RIGHT, 100, 50, 150);
+        addWall(WallPosition.DOWN, 100, 150, 50);
+        addWall(WallPosition.UP, 100, 150, 250);
+
         setInput(primaryStage);
 
         final Timeline gameLoop = getGameLoop();

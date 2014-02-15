@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Ajout du GameWorld">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/UpRightConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/UpRightConnectedWall.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Fixing bound issue on CornerUpRight Wall">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -71,30 +71,12 @@
       <file leaf-file-name="Wall.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/Wall.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="13" selection-start="3447" selection-end="3447" vertical-scroll-proportion="0.0" vertical-offset="1595" max-vertical-offset="2214">
+            <state line="108" column="13" selection-start="3447" selection-end="3447" vertical-scroll-proportion="0.0" vertical-offset="1632" max-vertical-offset="2214">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="docComment;class#Wall#0" expanded="true" />
                 <element signature="e#2672#2678#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DownLeftConnectedWall.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/DownLeftConnectedWall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="47" selection-start="0" selection-end="1464" vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="882">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DownRightConnectedWall.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/DownRightConnectedWall.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="72" selection-start="1455" selection-end="1455" vertical-scroll-proportion="0.0" vertical-offset="720" max-vertical-offset="882">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -108,11 +90,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PacManWorld.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="PacManWorld.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="8" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.62472886" vertical-offset="216" max-vertical-offset="1746">
+            <state line="47" column="44" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1800">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RectangleWall.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/RectangleWall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="39" selection-start="880" selection-end="1165" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1008">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CrossConnectedWall.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="53" column="17" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.7852495" vertical-offset="538" max-vertical-offset="1062">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -167,7 +169,6 @@
         <option value="$PROJECT_DIR$/src/lpostula/Main.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/WallPosition.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/SingleConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/HorizontalConnectedWall.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/LeftConnectedWall.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/RightConnectedWall.java" />
@@ -190,6 +191,7 @@
         <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/UpRightConnectedWall.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/Wall.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java" />
       </list>
     </option>
   </component>
@@ -627,7 +629,7 @@
       <workItem from="1392391683657" duration="16322000" />
       <workItem from="1392455179091" duration="8569000" />
       <workItem from="1392464067138" duration="20074000" />
-      <workItem from="1392505319250" duration="810000" />
+      <workItem from="1392505319250" duration="2080000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout du spriteManager">
       <created>1392372003464</created>
@@ -665,11 +667,15 @@
       <created>1392485528174</created>
       <updated>1392485528174</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Fixing bound issue on CornerUpRight Wall">
+      <created>1392506148158</created>
+      <updated>1392506148158</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55789000" />
+    <option name="totallyTimeSpent" value="57059000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="-3" width="1370" height="748" extended-state="6" />
@@ -762,7 +768,8 @@
     <MESSAGE value="Changing from singleConnected to all rectangleshapewall" />
     <MESSAGE value="Bounding for rectangle shaped done" />
     <MESSAGE value="The Corner shape wall are bounded&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="The Corner shape wall are bounded&#10;" />
+    <MESSAGE value="Fixing bound issue on CornerUpRight Wall" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing bound issue on CornerUpRight Wall" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -941,15 +948,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="37" selection-start="321" selection-end="321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
-          <folding>
-            <element signature="docComment;class#CrossConnectedWall#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/HorizontalConnectedWall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="37" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378">
@@ -1036,16 +1034,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/RectangleWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="52" selection-start="1720" selection-end="1720" vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1188">
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="docComment;class#RectangleWall#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/UpLeftConnectedWall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="25" selection-start="0" selection-end="1505" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="864">
@@ -1101,10 +1089,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/RectangleWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="39" selection-start="880" selection-end="1165" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1008">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="8" selection-start="1150" selection-end="1150" vertical-scroll-proportion="0.62472886" vertical-offset="216" max-vertical-offset="1746">
+        <state line="47" column="44" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1800">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="17" selection-start="2253" selection-end="2253" vertical-scroll-proportion="0.7852495" vertical-offset="538" max-vertical-offset="1062">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
