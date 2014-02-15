@@ -12,6 +12,7 @@ public class UpConnectedWall extends RectangleWall {
         xBoundMax = wallIncrement + wallWidth;
         yBoundMin = 0.0;
         yBoundMax = wallIncrement + wallWidth;
+        checkDown = false;
         constructCanva();
     }
 }

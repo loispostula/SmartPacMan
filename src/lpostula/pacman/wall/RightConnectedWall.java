@@ -12,6 +12,7 @@ public class RightConnectedWall extends RectangleWall {
         xBoundMax = wallDimension;
         yBoundMin = wallIncrement;
         yBoundMax = wallIncrement + wallWidth;
+        checkLeft = false;
         constructCanva();
     }
 }
