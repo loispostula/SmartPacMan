@@ -39,6 +39,6 @@ public class UpRightConnectedWall extends CornerWall {
         lineDown.add(new Line(mainMinX, mainMaxY, mainMaxX, mainMaxY));
         lineLeft.add(new Line(mainMinX, smallMinY, mainMinX, mainMaxY));
         lineRight.add(new Line(smallMaxX, smallMinY, smallMaxX, smallMaxY));
-        lineUp.add(new Line(mainMinX, smallMaxY, smallMinX, smallMaxY));
+        lineUp.add(new Line(smallMaxX, smallMaxY, mainMaxX, smallMaxY));
     }
 }
