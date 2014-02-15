@@ -6,8 +6,8 @@ package lpostula.pacman.wall;
  */
 public class HorizontalConnectedWall extends RectangleWall {
 
-    public HorizontalConnectedWall(double dimension) {
-        super(dimension);
+    public HorizontalConnectedWall(double dimension, double posX, double posY) {
+        super(dimension, posX, posY);
         xBoundMin = 0.0;
         xBoundMax = wallDimension;
         yBoundMin = wallIncrement;

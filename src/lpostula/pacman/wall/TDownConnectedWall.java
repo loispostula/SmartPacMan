@@ -8,8 +8,8 @@ import javafx.scene.canvas.Canvas;
  */
 public class TDownConnectedWall extends Wall {
 
-    public TDownConnectedWall(double dimension) {
-        super(dimension);
+    public TDownConnectedWall(double dimension, double posX, double posY) {
+        super(dimension, posX, posY);
         double wallWidth = wallDimension / 2.0;
         double wallIncrement = wallWidth / 2.0;
         double[] pointsX = {

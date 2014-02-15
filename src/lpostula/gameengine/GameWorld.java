@@ -36,10 +36,10 @@ public abstract class GameWorld {
                 new EventHandler() {
                     @Override
                     public void handle(Event event) {
-                        // update actors
-                        updateSprites();
                         // check for collision
                         checkCollisions();
+                        // update actors
+                        updateSprites();
                         // removed dead things
                         cleanupSprites();
                     }

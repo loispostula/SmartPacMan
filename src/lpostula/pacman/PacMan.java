@@ -3,7 +3,6 @@ package lpostula.pacman;
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-import javafx.scene.shape.CircleBuilder;
 import lpostula.gameengine.Sprite;
 
 /**
@@ -11,22 +10,17 @@ import lpostula.gameengine.Sprite;
  * Documentation de la classe PacMan
  */
 public class PacMan extends Sprite {
-    public static final int PACMAN_DIMENSION = 10;
+    public static final int PACMAN_DIMENSION = 5;
     public static final Double PACMAN_SPEED_FACTOR = 3.5;
     private int direction = 0;
+    private int forbid = 4;
 
     public PacMan() {
-        Circle sphere = CircleBuilder.create()
-                .centerX(PACMAN_DIMENSION)
-                .centerY(PACMAN_DIMENSION)
-                .radius(PACMAN_DIMENSION)
-                .cache(true)
-                .build();
+        Circle sphere = new Circle(PACMAN_DIMENSION);
         sphere.setFill(Color.YELLOW);
-        sphere.setTranslateX(200);
-        sphere.setTranslateY(200);
+        sphere.setTranslateX(0);
+        sphere.setTranslateY(0);
         sphere.setVisible(true);
-        sphere.setId("Pacman");
         node = sphere;
         this.vX = this.vY = PACMAN_DIMENSION / PACMAN_SPEED_FACTOR;
     }
@@ -55,7 +49,10 @@ public class PacMan extends Sprite {
                 modX = 0;
                 modY = 1;
                 break;
-
+            case 4:
+                modX = 0;
+                modY = 0;
+                break;
         }
         node.setTranslateX(node.getTranslateX() + (modX * vX));
         node.setTranslateY(node.getTranslateY() + (modY * vY));
@@ -68,14 +65,36 @@ public class PacMan extends Sprite {
     }
 
     public void move(KeyCode code) {
+        boolean changeForbid = false;
         if (code.equals(KeyCode.LEFT)) {
-            direction = 0;
+            if (forbid != 0) {
+                direction = 0;
+                forbid = 4;
+            }
         } else if (code.equals(KeyCode.RIGHT)) {
-            direction = 1;
+            if (forbid != 1) {
+                direction = 1;
+                forbid = 4;
+            }
         } else if (code.equals(KeyCode.UP)) {
-            direction = 2;
+            if (forbid != 2) {
+                direction = 2;
+                forbid = 4;
+            }
         } else if (code.equals(KeyCode.DOWN)) {
-            direction = 3;
+            if (forbid != 3) {
+                direction = 3;
+                forbid = 4;
+            }
         }
+    }
+
+    public void stop() {
+        forbid = direction;
+        direction = 4;
+    }
+
+    public int getDirection() {
+        return direction;
     }
 }

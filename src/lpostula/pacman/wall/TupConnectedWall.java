@@ -7,8 +7,8 @@ import javafx.scene.canvas.Canvas;
  * Documentation de la classe TupConnectedWall
  */
 public class TupConnectedWall extends Wall {
-    public TupConnectedWall(double dimension) {
-        super(dimension);
+    public TupConnectedWall(double dimension, double posX, double posY) {
+        super(dimension, posX, posY);
         double wallWidth = wallDimension / 2.0;
         double wallIncrement = wallWidth / 2.0;
         double[] pointsX = {

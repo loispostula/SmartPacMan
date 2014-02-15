@@ -1,33 +1,43 @@
 package lpostula.pacman.wall;
 
-import javafx.scene.canvas.Canvas;
+import javafx.scene.shape.Line;
 
 /**
  * Created by lpostula on 14/02/14.
- * Documentation de la classe DownLeftConnectedWall
+ * Documentation de la classe UpLeftConnectedWall
  */
-public class DownLeftConnectedWall extends Wall {
-    public DownLeftConnectedWall(double dimension) {
-        super(dimension);
-        double wallWidth = wallDimension / 2.0;
-        double wallIncrement = wallWidth / 2.0;
-        double[] pointsX = {
-                0.0,
-                wallIncrement,
-                wallIncrement,
-                wallIncrement + wallWidth,
-                wallIncrement + wallWidth,
-                0.0};
-        double[] pointsY = {
-                wallIncrement,
-                wallIncrement,
-                0.0,
-                0.0,
-                wallIncrement + wallWidth,
-                wallIncrement + wallWidth};
-        Canvas canva = new Canvas(wallDimension, wallDimension);
-        canva.getGraphicsContext2D().fillPolygon(pointsX, pointsY, 6);
-        canva.setRotate(270);
-        node = canva;
+public class DownLeftConnectedWall extends CornerWall {
+    public DownLeftConnectedWall(double dimension, double posX, double posY) {
+        super(dimension, posX, posY);
+
+        xBoundMinMain = 0.0;
+        xBoundMaxMain = wallIncrement + wallWidth;
+
+        xBoundMinSmall = wallIncrement;
+        xBoundMaxSmall = wallIncrement + wallWidth;
+
+        yBoundMinMain = wallIncrement;
+        yBoundMaxMain = wallWidth + wallIncrement;
+
+        yBoundMinSmall = wallWidth + wallIncrement;
+        yBoundMaxSmall = wallDimension;
+
+        constructCanva();
+    }
+
+    @Override
+    public void constructLine() {
+        double mainMinX = xBoundMinMain + posX;
+        double mainMinY = yBoundMinMain + posY;
+        double mainMaxX = mainMinX + widthMain;
+        double mainMaxY = mainMinY + heightMain;
+        double smallMinX = xBoundMinSmall + posX;
+        double smallMinY = yBoundMinSmall + posY;
+        double smallMaxX = xBoundMaxSmall + posX;
+        double smallMaxY = yBoundMaxSmall + posY;
+        lineUp.add(new Line(mainMinX, mainMinY, mainMaxX, mainMinY));
+        lineRight.add(new Line(mainMaxX, mainMinY, mainMaxX, mainMaxY));
+        lineLeft.add(new Line(smallMinX, smallMinY, smallMinX, smallMaxY));
+        lineDown.add(new Line(mainMinX, mainMaxY, smallMinX, mainMaxY));
     }
 }

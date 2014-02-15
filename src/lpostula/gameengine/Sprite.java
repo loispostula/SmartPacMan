@@ -10,16 +10,17 @@ import java.util.List;
  * Documentation de la classe Sprite
  */
 public abstract class Sprite {
-    protected List animations = new ArrayList<>();
-    protected Node node;
-    protected double vX;
-    protected double vY;
-    protected boolean isDead = false;
+    public List animations = new ArrayList<>();
+    public Node node;
+    public double vX;
+    public double vY;
+    public boolean isDead = false;
+
     public abstract void update();
-    public boolean collide(Sprite other){
+
+    public boolean collide(Sprite other) {
         return false;
     }
-
 
 
 }

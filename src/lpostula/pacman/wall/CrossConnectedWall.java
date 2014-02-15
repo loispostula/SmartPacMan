@@ -8,8 +8,8 @@ import javafx.scene.canvas.Canvas;
  */
 public class CrossConnectedWall extends Wall {
 
-    public CrossConnectedWall(double dimension) {
-        super(dimension);
+    public CrossConnectedWall(double dimension, double posX, double posY) {
+        super(dimension, posX, posY);
         double wallWidth = wallDimension / 2.0;
         double wallIncrement = wallWidth / 2.0;
         double[] pointsX = {

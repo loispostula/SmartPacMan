@@ -9,6 +9,9 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import lpostula.gameengine.GameWorld;
 import lpostula.gameengine.Sprite;
+import lpostula.pacman.wall.Wall;
+import lpostula.pacman.wall.WallFactory;
+import lpostula.pacman.wall.WallPosition;
 
 /**
  * Created by lpostula on 14/02/14.
@@ -35,9 +38,23 @@ public class PacManWorld extends GameWorld {
         //adding the pacman
         getSpriteManager().addSprites(pacman);
         getSceneNodes().getChildren().add(0, pacman.node);
-        setInputPacMan(primaryStage);
+
+
+        addWall(WallPosition.CORNERUPLEFT, 20, 120, 120);
+        addWall(WallPosition.CORNERUPRIGHT, 20, 100, 120);
+        addWall(WallPosition.CORNERDOWNRIGHT, 20, 100, 100);
+        addWall(WallPosition.CORNERDOWNLEFT, 20, 120, 100);
+        setInput(primaryStage);
 
         final Timeline gameLoop = getGameLoop();
+    }
+
+    private void addWall(WallPosition position, double width, double posX, double posY) {
+        Wall wall = WallFactory.buildWall(position, width, posX, posY);
+        getSpriteManager().addSprites(wall);
+        getSceneNodes().getChildren().add(0, wall.node);
+        wall.node.setTranslateX(posX);
+        wall.node.setTranslateY(posY);
     }
 
     @Override
@@ -48,6 +65,7 @@ public class PacManWorld extends GameWorld {
             // advance the spheres velocity
             pac.update();
 
+            //there will be wall every where so it gonna be remove
             // bounce off the walls when outside of boundaries
             if (pac.node.getTranslateX() > (getGameSurface().getWidth() - pac.node.getBoundsInParent().getWidth())) {
                 pac.node.setTranslateX(getGameSurface().getWidth() - pac.node.getBoundsInParent().getWidth());
@@ -62,7 +80,21 @@ public class PacManWorld extends GameWorld {
         }
     }
 
-    final private void setInputPacMan(Stage primaryStage) {
+    @Override
+    protected boolean handleCollision(Sprite spriteA, Sprite spriteB) {
+        if (spriteA != spriteB) {
+            if (spriteA.collide(spriteB)) {
+                if (spriteA == pacman) {
+                    pacman.stop();
+                } else if (spriteB == pacman) {
+                    pacman.stop();
+                }
+            }
+        }
+        return false;
+    }
+
+    final private void setInput(Stage primaryStage) {
         EventHandler movePacMan = new EventHandler() {
             @Override
             public void handle(Event event) {

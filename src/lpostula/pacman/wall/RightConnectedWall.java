@@ -6,13 +6,13 @@ package lpostula.pacman.wall;
  */
 public class RightConnectedWall extends RectangleWall {
 
-    public RightConnectedWall(double dimension) {
-        super(dimension);
+    public RightConnectedWall(double dimension, double posX, double posY) {
+        super(dimension, posX, posY);
         xBoundMin = wallIncrement;
         xBoundMax = wallDimension;
         yBoundMin = wallIncrement;
         yBoundMax = wallIncrement + wallWidth;
-        checkLeft = false;
+        checkRight = false;
         constructCanva();
     }
 }
