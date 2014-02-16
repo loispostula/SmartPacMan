@@ -42,6 +42,8 @@ public abstract class GameWorld {
                         updateSprites();
                         // removed dead things
                         cleanupSprites();
+                        // update path
+                        updatePath();
                     }
                 }); // oneFrame
         // sets the game world's game loop (Timeline)
@@ -52,6 +54,11 @@ public abstract class GameWorld {
     }
 
     public abstract void initialize(final Stage primaryStage);
+
+    public void updatePath() {
+    }
+
+    ;
 
     public void beginGameLoope() {
         getGameLoop().play();

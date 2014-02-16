@@ -13,7 +13,10 @@ import lpostula.gameengine.GameWorld;
 import lpostula.gameengine.Sprite;
 import lpostula.pacman.board.Board;
 import lpostula.pacman.board.PrimsBoard;
+import lpostula.pacman.mobs.Blue;
+import lpostula.pacman.mobs.Hunter;
 import lpostula.pacman.mobs.PacMan;
+import lpostula.pacman.mobs.Red;
 import lpostula.pacman.wall.Wall;
 import lpostula.pacman.wall.WallFactory;
 import lpostula.pacman.wall.WallPosition;
@@ -25,7 +28,13 @@ import lpostula.pacman.wall.WallPosition;
 public class PacManWorld extends GameWorld {
 
     private PacMan pacman;
+    private Red redMob;
+    private Blue blueMob;
+    private Path blueMobPath;
+    private Path redMobPath;
     private boolean auto = true;
+    private long timeLoop = 0;
+    private Board board;
 
     public PacManWorld(int fps, String title, boolean auto) {
         super(fps, title);
@@ -45,7 +54,7 @@ public class PacManWorld extends GameWorld {
         //adding the pacman
 
 
-        Board board = new PrimsBoard(40, 30, 20, 1, 1);
+        board = new PrimsBoard(40, 30, 20, 1, 1);
         createWall(board, 40, 30, 20);
 
         pacman = new PacMan(board);
@@ -54,11 +63,46 @@ public class PacManWorld extends GameWorld {
         pacman.node.setTranslateX(30);
         pacman.node.setTranslateY(30);
 
+        buildMobs();
+
         if (auto) {
             setInput(primaryStage);
         }
 
         final Timeline gameLoop = getGameLoop();
+    }
+
+    public void buildMobs() {
+        redMob = new Red(board, pacman);
+        getSpriteManager().addSprites(redMob);
+        redMob.node.setTranslateX(39 * board.getStepSize() + 10);
+        redMob.node.setTranslateY(1 * board.getStepSize() + 10);
+        redMobPath = new Path(40, 30, 20, redMob);
+
+        blueMob = new Blue(board, pacman);
+        getSpriteManager().addSprites(blueMob);
+        blueMob.node.setTranslateX(1 * board.getStepSize() + 10);
+        blueMob.node.setTranslateY(29 * board.getStepSize() + 10);
+        blueMobPath = new Path(40, 30, 20, blueMob);
+
+        getSceneNodes().getChildren().add(redMob.node);
+        getSceneNodes().getChildren().add(blueMob.node);
+        getSceneNodes().getChildren().add(redMobPath.node);
+        getSceneNodes().getChildren().add(blueMobPath.node);
+    }
+
+    @Override
+    public void updatePath() {
+        int skip = 0;
+        if (timeLoop % 10 == 0) {
+            redMobPath.update(skip);
+            blueMobPath.update(skip);
+            ++skip;
+            if (timeLoop % 30 == 0) {
+                skip = 0;
+            }
+        }
+        ++timeLoop;
     }
 
     private int numberOfNeighboor(int[][] maze, int width, int height, int x, int y) {
@@ -147,14 +191,9 @@ public class PacManWorld extends GameWorld {
 
     @Override
     protected void handleUpdate(Sprite sprite) {
+
         if (sprite instanceof PacMan) {
             PacMan pac = (PacMan) sprite;
-
-            // advance the spheres velocity
-            pac.update();
-
-            //there will be wall every where so it gonna be remove
-            // bounce off the walls when outside of boundaries
             if (pac.node.getTranslateX() > (getGameSurface().getWidth() - pac.node.getBoundsInParent().getWidth())) {
                 pac.node.setTranslateX(getGameSurface().getWidth() - pac.node.getBoundsInParent().getWidth());
             } else if (pac.node.getTranslateX() < 0) {
@@ -166,6 +205,7 @@ public class PacManWorld extends GameWorld {
                 pac.node.setTranslateY(0);
             }
         }
+        sprite.update();
     }
 
     @Override
@@ -175,7 +215,9 @@ public class PacManWorld extends GameWorld {
                 if (spriteA == pacman) {
                     pacman.stop();
                 } else if (spriteB == pacman) {
-                    pacman.stop();
+                    if (spriteA instanceof Hunter) {
+                        getGameLoop().pause();
+                    } else pacman.stop();
                 }
             }
         }

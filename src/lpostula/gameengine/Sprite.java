@@ -18,6 +18,8 @@ public abstract class Sprite {
 
     public abstract void update();
 
+    public abstract int getDirection();
+
     public boolean collide(Sprite other) {
         return false;
     }

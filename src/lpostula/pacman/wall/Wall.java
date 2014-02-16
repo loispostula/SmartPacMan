@@ -6,6 +6,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import lpostula.gameengine.Sprite;
+import lpostula.pacman.mobs.Hunter;
 import lpostula.pacman.mobs.PacMan;
 
 import java.util.ArrayList;
@@ -81,12 +82,11 @@ public abstract class Wall extends Sprite {
     @Override
     public boolean collide(Sprite other) {
         boolean collide = false;
-        if (other instanceof PacMan) {
-            PacMan cand = (PacMan) other;
+        if (other instanceof PacMan || other instanceof Hunter) {
             Circle circle = (Circle) other.node;
-            Point2D center = cand.node.localToParent(circle.getCenterX(), circle.getCenterY());
+            Point2D center = other.node.localToParent(circle.getCenterX(), circle.getCenterY());
             List<Line> toCheck = new ArrayList<Line>();
-            switch (cand.getDirection()) {
+            switch (other.getDirection()) {
                 case 0:
                     //left
                     toCheck.addAll(lineRight);
@@ -115,5 +115,10 @@ public abstract class Wall extends Sprite {
 
     @Override
     public void update() {
+    }
+
+    @Override
+    public int getDirection() {
+        return 0;
     }
 }

@@ -6,7 +6,7 @@ import lpostula.pacman.PacManWorld;
 
 public class Main extends Application {
 
-    PacManWorld gameWorld = new PacManWorld(100, "Pacman", true);
+    PacManWorld gameWorld = new PacManWorld(60, "Pacman", true);
 
     @Override
     public void start(Stage primaryStage) throws Exception {

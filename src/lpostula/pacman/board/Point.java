@@ -5,8 +5,8 @@ package lpostula.pacman.board;
  * Documentation de la classe Point
  */
 public class Point {
-    Integer x;
-    Integer y;
+    public Integer x;
+    public Integer y;
     Point parent;
 
     public Point(int x, int y, Point p) {

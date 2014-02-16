@@ -5,6 +5,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import lpostula.gameengine.Sprite;
 import lpostula.pacman.board.Board;
+import lpostula.pacman.board.Point;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,12 @@ public class PacMan extends Sprite {
             path = board.getSolution();
             this.vX = this.vY = board.getStepSize() / 10.0;
         }
+    }
+
+    public Point getPos() {
+        int x = (int) Math.floor(node.getTranslateX() / board.getStepSize());
+        int y = (int) Math.floor(node.getTranslateY() / board.getStepSize());
+        return new Point(x, y, null);
     }
 
     @Override
@@ -120,6 +127,7 @@ public class PacMan extends Sprite {
         direction = 4;
     }
 
+    @Override
     public int getDirection() {
         return direction;
     }

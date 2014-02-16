@@ -16,52 +16,96 @@ public class RecursifSolutioner extends Solutionner {
 
     public RecursifSolutioner(Board board) {
         super(board);
-        maze = board.getBoard();
+        int[][] tmpMaze = board.getBoard();
+        maze = new int[board.width][board.height];
+        for (int i = 0; i < board.width; ++i) {
+            System.arraycopy(tmpMaze[i], 0, maze[i], 0, board.height);
+        }
         end = board.getEndPoint();
         start = board.getStartPoint();
         path = new LinkedList<>();
         run();
     }
 
-    @Override
-    public void run() {
-        compute(new Point(-1, -1, null), start);
+    public RecursifSolutioner(Board board, Point start, Point end) {
+        super(board);
+        int[][] tmpMaze = board.getBoard();
+        maze = new int[board.width][board.height];
+        for (int i = 0; i < board.width; ++i) {
+            System.arraycopy(tmpMaze[i], 0, maze[i], 0, board.height);
+        }
+        this.end = end;
+        this.start = start;
+        path = new LinkedList<>();
+        run();
     }
 
-    private void compute(Point previous, Point current) {
-        int direction = computeDirection(previous, current);
-        if (!stop) {
-            path.add(new Integer(direction));
-        }
-        if (stop || current.equals(end)) {
+    @Override
+    public void run() {
+        compute(-1, start);
+    }
 
-            stop = true;
-        } else {
-            if (direction != 0 && tryDir(3, current)) {
-                //down
-                Point next = new Point(current.x, current.y + 1, null);
-                compute(current, next);
-                if (!stop) path.pollLast();
-            }
-            if (direction != 1 && tryDir(2, current)) {
-                //right
-                Point next = new Point(current.x + 1, current.y, null);
-                compute(current, next);
-                if (!stop) path.pollLast();
-            }
-            if (direction != 2 && tryDir(1, current)) {
-                //left
-                Point next = new Point(current.x - 1, current.y, null);
-                compute(current, next);
-                if (!stop) path.pollLast();
-            }
-            if (direction != 3 && tryDir(0, current)) {
-                //up
-                Point next = new Point(current.x, current.y - 1, null);
-                compute(current, next);
-                if (!stop) path.pollLast();
+    private Point[] getAdjacentCell(Point current) {
+        Point[] adj = new Point[4];
+        adj[0] = new Point(current.x, current.y - 1, null);
+        adj[1] = new Point(current.x - 1, current.y, null);
+        adj[2] = new Point(current.x + 1, current.y, null);
+        adj[3] = new Point(current.x, current.y + 1, null);
+        return adj;
+    }
+
+    private boolean cellFree(Point cand) {
+        if (cand.x < 0 || cand.x >= board.width ||
+                cand.y < 0 || cand.y >= board.height) {
+            return false;
+        }
+        return (maze[cand.x][cand.y] == 0 || maze[cand.x][cand.y] == 3);
+
+    }
+
+    private void addInMaze(Point cand) {
+        maze[cand.x][cand.y] = 4;
+    }
+
+    private void removeInMaze(Point cand) {
+        maze[cand.x][cand.y] = 0;
+    }
+
+    private int invert(int i) {
+        switch (i) {
+            case 0:
+                return 3;
+            case 1:
+                return 2;
+            case 2:
+                return 1;
+            case 3:
+                return 0;
+        }
+        ;
+        return -1;
+    }
+
+    private boolean compute(int prev, Point current) {
+        if (current.equals(end)) {
+            return true;
+        }
+
+        Point[] adjacentCell = getAdjacentCell(current);
+        for (int i = 0; i < 4; ++i) {
+            if (i != invert(prev)) {
+                Point cand = adjacentCell[i];
+                if (cellFree(cand)) {
+                    addInMaze(cand);
+                    if (compute(i, cand)) {
+                        path.add(0, i);
+                        return true;
+                    }
+                    removeInMaze(cand);
+                }
             }
         }
+        return false;
     }
 
     private boolean tryDir(int direction, Point current) {
