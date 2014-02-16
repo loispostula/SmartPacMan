@@ -35,27 +35,31 @@ public class PacManWorld extends GameWorld {
     private boolean auto = true;
     private long timeLoop = 0;
     private Board board;
+    private int column;
+    private int row;
+    private final double cellWidth = 20;
 
-    public PacManWorld(int fps, String title, boolean auto) {
+    public PacManWorld(int fps, String title, boolean auto, int col, int row) {
         super(fps, title);
         this.auto = auto;
+        this.column = col;
+        this.row = row;
     }
 
     @Override
     public void initialize(Stage primaryStage) {
         // Sets the window title
-        primaryStage.setTitle(getWindowTitle());
 
         // Create the scene
         setSceneNodes(new Group());
-        setGameSurface(new Scene(getSceneNodes(), 850, 850));
+        setGameSurface(new Scene(getSceneNodes(), (column + 3) * cellWidth, (row + 3) * cellWidth));
         primaryStage.setScene(getGameSurface());
 
         //adding the pacman
 
 
-        board = new PrimsBoard(40, 30, 20, 1, 1);
-        createWall(board, 40, 30, 20);
+        board = new PrimsBoard(column, row, cellWidth, 1, 1);
+        createWall(board, column, row, cellWidth);
 
         pacman = new PacMan(board);
         getSpriteManager().addSprites(pacman);
@@ -75,20 +79,20 @@ public class PacManWorld extends GameWorld {
     public void buildMobs() {
         redMob = new Red(board, pacman);
         getSpriteManager().addSprites(redMob);
-        redMob.node.setTranslateX(39 * board.getStepSize() + 10);
-        redMob.node.setTranslateY(1 * board.getStepSize() + 10);
-        redMobPath = new Path(40, 30, 20, redMob);
+        redMob.node.setTranslateX((column - 1) * board.getStepSize() + (cellWidth / 2));
+        redMob.node.setTranslateY(1 * board.getStepSize() + (cellWidth / 2));
+        redMobPath = new Path(column, row, cellWidth, redMob);
 
         blueMob = new Blue(board, pacman);
         getSpriteManager().addSprites(blueMob);
-        blueMob.node.setTranslateX(1 * board.getStepSize() + 10);
-        blueMob.node.setTranslateY(29 * board.getStepSize() + 10);
-        blueMobPath = new Path(40, 30, 20, blueMob);
+        blueMob.node.setTranslateX(1 * board.getStepSize() + (cellWidth / 2));
+        blueMob.node.setTranslateY((row - 1) * board.getStepSize() + (cellWidth / 2));
+        blueMobPath = new Path(column, row, cellWidth, blueMob);
 
         getSceneNodes().getChildren().add(redMob.node);
         getSceneNodes().getChildren().add(blueMob.node);
-        getSceneNodes().getChildren().add(redMobPath.node);
-        getSceneNodes().getChildren().add(blueMobPath.node);
+        getSceneNodes().getChildren().add(0, redMobPath.node);
+        getSceneNodes().getChildren().add(0, blueMobPath.node);
     }
 
     @Override
