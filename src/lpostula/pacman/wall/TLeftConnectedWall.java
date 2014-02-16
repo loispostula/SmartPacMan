@@ -1,37 +1,38 @@
 package lpostula.pacman.wall;
 
-import javafx.scene.canvas.Canvas;
+import javafx.scene.shape.Line;
 
 /**
  * Created by lpostula on 14/02/14.
  * Documentation de la classe TLeftConnectedWall
  */
-public class TLeftConnectedWall extends Wall {
+public class TLeftConnectedWall extends TConnectedWall {
     public TLeftConnectedWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
-        double wallWidth = wallDimension / 2.0;
-        double wallIncrement = wallWidth / 2.0;
-        double[] pointsX = {
-                wallIncrement,
-                wallIncrement,
-                0.0,
-                0.0,
-                wallIncrement,
-                wallIncrement,
-                wallIncrement + wallWidth,
-                wallIncrement + wallWidth
-        };
-        double[] pointsY = {
-                0.0,
-                wallIncrement,
-                wallIncrement,
-                wallIncrement + wallWidth,
-                wallIncrement + wallWidth,
-                wallDimension,
-                wallDimension,
-                0.0};
-        Canvas canva = new Canvas(wallDimension, wallDimension);
-        canva.getGraphicsContext2D().fillPolygon(pointsX, pointsY, 8);
-        node = canva;
+        xBoundBig = wallIncrement;
+        yBoundBig = 0.0;
+        widthBig = wallWidth;
+        heightBig = wallDimension;
+
+        xBoundSmall = 0.0;
+        yBoundSmall = wallIncrement;
+        widthSmall = wallIncrement;
+        heightSmall = wallWidth;
+        constructCanva();
+    }
+
+    @Override
+    public void constructLine() {
+        double xBoundBigCor = xBoundBig + posX;
+        double yBoundBigCor = yBoundBig + posY;
+        double xBoundSmallCor = xBoundSmall + posX;
+        double yBoundSmallCor = yBoundSmall + posY;
+        lineRight.add(new Line(xBoundBigCor + widthBig, yBoundBigCor, xBoundBigCor + widthBig, yBoundBigCor + heightBig));
+        lineLeft.add(new Line(xBoundBigCor, yBoundBigCor, xBoundBigCor, yBoundSmallCor));
+        lineLeft.add(new Line(xBoundBigCor, yBoundSmallCor + heightSmall, xBoundBigCor, yBoundBigCor + heightBig));
+        lineUp.add(new Line(xBoundSmallCor, yBoundSmallCor, xBoundSmallCor + widthSmall, yBoundSmallCor));
+        lineDown.add(new Line(xBoundSmallCor, yBoundSmallCor + heightSmall, xBoundSmallCor + widthSmall, yBoundSmallCor + heightSmall));
+
+
     }
 }

@@ -45,7 +45,7 @@ public class WallFactory {
                 wall = new TLeftConnectedWall(dimension, posX, posY);
                 break;
             case TUP:
-                wall = new TupConnectedWall(dimension, posX, posY);
+                wall = new TUpConnectedWall(dimension, posX, posY);
                 break;
             case TRIGHT:
                 wall = new TRightConnectedWall(dimension, posX, posY);
