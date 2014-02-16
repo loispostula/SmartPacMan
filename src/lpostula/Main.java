@@ -2,12 +2,11 @@ package lpostula;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
-import lpostula.gameengine.GameWorld;
 import lpostula.pacman.PacManWorld;
 
 public class Main extends Application {
 
-    GameWorld gameWorld = new PacManWorld(60, "Pacman");
+    PacManWorld gameWorld = new PacManWorld(100, "Pacman", true);
 
     @Override
     public void start(Stage primaryStage) throws Exception {

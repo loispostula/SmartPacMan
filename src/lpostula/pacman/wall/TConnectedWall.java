@@ -1,7 +1,6 @@
 package lpostula.pacman.wall;
 
 import javafx.scene.canvas.Canvas;
-import javafx.scene.paint.Color;
 
 /**
  * Created by lpostula on 16/02/14.
@@ -23,7 +22,7 @@ public class TConnectedWall extends Wall {
 
     public void constructCanva() {
         Canvas canva = new Canvas(wallDimension, wallDimension);
-        canva.getGraphicsContext2D().setFill(Color.AQUA);
+        canva.getGraphicsContext2D().setFill(COLOR);
         canva.getGraphicsContext2D().fillRect(xBoundBig, yBoundBig, widthBig, heightBig);
         canva.getGraphicsContext2D().fillRect(xBoundSmall, yBoundSmall, widthSmall, heightSmall);
         node = canva;

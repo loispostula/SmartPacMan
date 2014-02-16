@@ -1,7 +1,6 @@
 package lpostula.pacman.wall;
 
 import javafx.scene.canvas.Canvas;
-import javafx.scene.paint.Color;
 
 /**
  * Created by lpostula on 15/02/14.
@@ -39,7 +38,7 @@ public class CornerWall extends Wall {
         heightMain = yBoundMaxMain - yBoundMinMain;
         heightSmall = yBoundMaxSmall - yBoundMinSmall;
         Canvas canva = new Canvas(wallDimension, wallDimension);
-        canva.getGraphicsContext2D().setFill(Color.AQUA);
+        canva.getGraphicsContext2D().setFill(COLOR);
         canva.getGraphicsContext2D().fillRect(xBoundMinMain, yBoundMinMain, widthMain, heightMain);
         canva.getGraphicsContext2D().fillRect(xBoundMinSmall, yBoundMinSmall, widthSmall, heightSmall);
         node = canva;

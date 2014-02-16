@@ -2,6 +2,7 @@ package lpostula.pacman.board;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -16,6 +17,7 @@ public class PrimsBoard extends Board {
     private int startX;
     private int startY;
     private int[][] maze;
+    private Point endPoint;
 
     public PrimsBoard(int nX, int nY, double cellWidth, int sX, int sY) {
         super(nX, nY, cellWidth);
@@ -83,33 +85,31 @@ public class PrimsBoard extends Board {
             }
 
             // if algorithm has resolved, mark end node
-            if (frontier.isEmpty())
+            if (frontier.isEmpty()) {
                 maze[last.x][last.y] = 3;
+                this.endPoint = new Point(last.x, last.y, null);
+            }
         }
     }
 
-    static class Point {
-        Integer x;
-        Integer y;
-        Point parent;
-
-        public Point(int x, int y, Point p) {
-            this.x = x;
-            this.y = y;
-            parent = p;
-        }
-
-        // compute opposite node given that it is in the other direction from the parent
-        public Point opposite() {
-            if (this.x.compareTo(parent.x) != 0)
-                return new Point(this.x + this.x.compareTo(parent.x), this.y, this);
-            if (this.y.compareTo(parent.y) != 0)
-                return new Point(this.x, this.y + this.y.compareTo(parent.y), this);
-            return null;
-        }
-    }
-
-    public int[][] getMaze() {
+    @Override
+    public int[][] getBoard() {
         return maze;
+    }
+
+    @Override
+    public Point getStartPoint() {
+        return new Point(startX, startY, null);
+    }
+
+    @Override
+    public Point getEndPoint() {
+        return endPoint;
+    }
+
+    @Override
+    public List<Integer> getSolution() {
+        RecursifSolutioner solutioner = new RecursifSolutioner(this);
+        return solutioner.getPath();
     }
 }

@@ -2,7 +2,6 @@ package lpostula.pacman.wall;
 
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 /**
@@ -29,7 +28,7 @@ public abstract class RectangleWall extends Wall {
         width = xBoundMax - xBoundMin;
         height = yBoundMax - yBoundMin;
         Canvas canva = new Canvas(wallDimension, wallDimension);
-        canva.getGraphicsContext2D().setFill(Color.AQUA);
+        canva.getGraphicsContext2D().setFill(COLOR);
         canva.getGraphicsContext2D().fillRect(xBoundMin, yBoundMin, width, height);
         node = canva;
         node.setVisible(true);

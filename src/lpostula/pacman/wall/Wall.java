@@ -2,10 +2,11 @@ package lpostula.pacman.wall;
 
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import lpostula.gameengine.Sprite;
-import lpostula.pacman.PacMan;
+import lpostula.pacman.mobs.PacMan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ public abstract class Wall extends Sprite {
     protected List<Line> lineRight = new ArrayList<Line>();
     protected List<Line> lineUp = new ArrayList<Line>();
     protected List<Line> lineDown = new ArrayList<Line>();
+    protected static final Color COLOR = Color.DIMGREY;
 
     public Wall(double dimension, double x, double y) {
         //we will draw the path of every wall

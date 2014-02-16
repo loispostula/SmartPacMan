@@ -1,7 +1,6 @@
 package lpostula.pacman.wall;
 
 import javafx.scene.canvas.Canvas;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 
 /**
@@ -31,7 +30,7 @@ public class CrossConnectedWall extends Wall {
 
     public void constructCanva() {
         Canvas canva = new Canvas(wallDimension, wallDimension);
-        canva.getGraphicsContext2D().setFill(Color.AQUA);
+        canva.getGraphicsContext2D().setFill(COLOR);
         canva.getGraphicsContext2D().fillRect(xBoundVert, yBoundVert, shortDist, longDist);
         canva.getGraphicsContext2D().fillRect(xBoundHor, yBoundHor, longDist, shortDist);
         node = canva;
