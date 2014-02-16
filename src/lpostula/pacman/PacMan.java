@@ -10,16 +10,14 @@ import lpostula.gameengine.Sprite;
  * Documentation de la classe PacMan
  */
 public class PacMan extends Sprite {
-    public static final int PACMAN_DIMENSION = 5;
-    public static final Double PACMAN_SPEED_FACTOR = 3.5;
+    public static final int PACMAN_DIMENSION = 7;
+    public static final Double PACMAN_SPEED_FACTOR = 3.0;
     private int direction = 0;
     private int forbid = 4;
 
     public PacMan() {
         Circle sphere = new Circle(PACMAN_DIMENSION);
         sphere.setFill(Color.YELLOW);
-        sphere.setTranslateX(0);
-        sphere.setTranslateY(0);
         sphere.setVisible(true);
         node = sphere;
         this.vX = this.vY = PACMAN_DIMENSION / PACMAN_SPEED_FACTOR;
