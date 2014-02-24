@@ -9,7 +9,6 @@ import java.util.List;
  */
 public class RecursifSolutioner extends Solutionner {
     private int[][] maze;
-    private final LinkedList<Integer> path;
     private Point end;
     private Point start;
     private boolean stop = false;

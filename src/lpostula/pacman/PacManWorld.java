@@ -13,10 +13,7 @@ import lpostula.gameengine.GameWorld;
 import lpostula.gameengine.Sprite;
 import lpostula.pacman.board.Board;
 import lpostula.pacman.board.PrimsBoard;
-import lpostula.pacman.mobs.Blue;
-import lpostula.pacman.mobs.Hunter;
-import lpostula.pacman.mobs.PacMan;
-import lpostula.pacman.mobs.Red;
+import lpostula.pacman.mobs.*;
 import lpostula.pacman.wall.Wall;
 import lpostula.pacman.wall.WallFactory;
 import lpostula.pacman.wall.WallPosition;
@@ -59,9 +56,10 @@ public class PacManWorld extends GameWorld {
 
 
         board = new PrimsBoard(column, row, cellWidth, 1, 1);
+        //board = new AldousBorder(column, row, cellWidth, 1, 1);//todo link with optionchooser, so factory for board
         createWall(board, column, row, cellWidth);
 
-        pacman = new PacMan(board);
+        pacman = new PacMan(board, true);
         getSpriteManager().addSprites(pacman);
         getSceneNodes().getChildren().add(pacman.node);
         pacman.node.setTranslateX(30);
@@ -169,6 +167,8 @@ public class PacManWorld extends GameWorld {
                     addCanva(Color.BLUE, size, i * size + 1, j * size + 1);
                 } else if (withWall[i][j] == 3) {
                     addCanva(Color.RED, size, i * size + 1, j * size + 1);
+                } else if (withWall[i][j] == 0) {
+                    addPowerBall(size, i * size + 1, j * size + 1);
                 }
             }
         }
@@ -181,6 +181,14 @@ public class PacManWorld extends GameWorld {
         getSceneNodes().getChildren().add(spot);
         spot.setTranslateX(posX);
         spot.setTranslateY(posY);
+    }
+
+    private void addPowerBall(double width, double posX, double posY) {
+        PowerBall pB = new PowerBall(width);
+        getSceneNodes().getChildren().add(pB.node);
+        getSpriteManager().addSprites(pB);
+        pB.node.setTranslateX(posX);
+        pB.node.setTranslateY(posY);
     }
 
     private void addWall(WallPosition position, double width, double posX, double posY) {
@@ -216,12 +224,16 @@ public class PacManWorld extends GameWorld {
     protected boolean handleCollision(Sprite spriteA, Sprite spriteB) {
         if (spriteA != spriteB) {
             if (spriteA.collide(spriteB)) {
-                if (spriteA == pacman) {
-                    pacman.stop();
-                } else if (spriteB == pacman) {
+                if (spriteB == pacman) {
                     if (spriteA instanceof Hunter) {
+                        pacman.handleDeath();
                         getGameLoop().pause();
-                    } else pacman.stop();
+                    } else if (spriteA instanceof Wall) {
+                        pacman.stop();
+                    }
+                }
+                if (spriteA == pacman && spriteB instanceof PowerBall) {
+                    ((PowerBall) spriteB).handleDeath();
                 }
             }
         }

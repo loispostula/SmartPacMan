@@ -2,7 +2,6 @@ package lpostula.pacman.board;
 
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 
 /**
@@ -14,21 +13,9 @@ public class PrimsBoard extends Board {
     private static final int FRONTIER = 1;
     private static final int OUT = 2;
     private Random rand = new Random();
-    private int startX;
-    private int startY;
-    private int[][] maze;
-    private Point endPoint;
 
     public PrimsBoard(int nX, int nY, double cellWidth, int sX, int sY) {
-        super(nX, nY, cellWidth);
-        startX = sX;
-        startY = sY;
-        maze = new int[width][height];
-        for (int i = 0; i < width; ++i) {
-            for (int j = 0; j < height; ++j) {
-                maze[i][j] = 1;
-            }
-        }
+        super(nX, nY, cellWidth, sX, sY);
 
         // select random point and open as start node
         Point st = new Point(startX, startY, null);
@@ -90,26 +77,5 @@ public class PrimsBoard extends Board {
                 this.endPoint = new Point(last.x, last.y, null);
             }
         }
-    }
-
-    @Override
-    public int[][] getBoard() {
-        return maze;
-    }
-
-    @Override
-    public Point getStartPoint() {
-        return new Point(startX, startY, null);
-    }
-
-    @Override
-    public Point getEndPoint() {
-        return endPoint;
-    }
-
-    @Override
-    public List<Integer> getSolution() {
-        RecursifSolutioner solutioner = new RecursifSolutioner(this);
-        return solutioner.getPath();
     }
 }

@@ -12,7 +12,7 @@ public class Blue extends Hunter {
     public Blue(Board board, PacMan pacman) {
         super(board, pacman);
         MOB_COLOR = Color.BLUE;
-        SPEED_FACTOR = 10.0;
+        SPEED_FACTOR = 8.0;
         constructNode();
     }
 

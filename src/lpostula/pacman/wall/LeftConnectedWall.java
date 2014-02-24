@@ -15,4 +15,5 @@ public class LeftConnectedWall extends RectangleWall {
         checkLeft = false;
         constructCanva();
     }
+
 }

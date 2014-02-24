@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SmartPacMan:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SmartPacMan_jar</output-path>
+    <root id="archive" name="SmartPacMan.jar">
+      <element id="module-output" name="SmartPacMan" />
+    </root>
+  </artifact>
+</component>

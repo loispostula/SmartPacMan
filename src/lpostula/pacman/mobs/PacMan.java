@@ -6,6 +6,8 @@ import javafx.scene.shape.Circle;
 import lpostula.gameengine.Sprite;
 import lpostula.pacman.board.Board;
 import lpostula.pacman.board.Point;
+import lpostula.pacman.board.RecursifSolutioner;
+import lpostula.pacman.board.Solutionner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,17 +25,19 @@ public class PacMan extends Sprite {
     private boolean auto = false;
     private int step = 0;
     private List<Integer> path = new ArrayList<>();
+    private int score = 0;
 
-    public PacMan(Board board) {
+    public PacMan(Board board, boolean automatique) {
         this.board = board;
         Circle sphere = new Circle(PACMAN_DIMENSION);
         sphere.setFill(Color.YELLOW);
         sphere.setVisible(true);
         node = sphere;
         this.vX = this.vY = PACMAN_DIMENSION / PACMAN_SPEED_FACTOR;
-        if (board != null) {
+        if (automatique) {
             auto = true;
-            path = board.getSolution();
+            Solutionner solutionner = new RecursifSolutioner(board);
+            path = solutionner.getPath();
             this.vX = this.vY = board.getStepSize() / 10.0;
         }
     }
@@ -67,12 +71,10 @@ public class PacMan extends Sprite {
                 modX = -1;
                 modY = 0;
                 break;
-
             case 2:
                 modX = 1;
                 modY = 0;
                 break;
-
             case 3:
                 modX = 0;
                 modY = 1;
@@ -80,6 +82,8 @@ public class PacMan extends Sprite {
             case 4:
                 modX = 0;
                 modY = 0;
+                break;
+            default:
                 break;
         }
         node.setTranslateX(node.getTranslateX() + (modX * vX));
@@ -90,12 +94,25 @@ public class PacMan extends Sprite {
 
     @Override
     public boolean collide(Sprite other) {
+        boolean collided = false;
+        if (other instanceof PowerBall) {
+            if (!((PowerBall) other).isDead()) {
+                double thisX = node.getTranslateX() / board.getStepSize();
+                double thisY = node.getTranslateY() / board.getStepSize();
 
-        return false;
+                double otherX = other.node.getTranslateX() / board.getStepSize();
+                double otherY = other.node.getTranslateY() / board.getStepSize();
+
+                if (thisX > otherX && thisX < otherX + 1 && thisY > otherY && thisY < otherY + 1) {
+                    ++this.score;
+                    collided = true;
+                }
+            }
+        }
+        return collided;
     }
 
     public void move(KeyCode code) {
-        boolean changeForbid = false;
         if (code.equals(KeyCode.UP)) {
             if (forbid != 2) {
                 direction = 0;
@@ -125,6 +142,10 @@ public class PacMan extends Sprite {
     public void stop() {
         forbid = direction;
         direction = 4;
+    }
+
+    public void handleDeath() {
+        System.out.println(score);
     }
 
     @Override
