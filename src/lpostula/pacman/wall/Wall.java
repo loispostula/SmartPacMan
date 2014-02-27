@@ -95,9 +95,6 @@ public abstract class Wall extends Sprite {
      * The Line down.
      */
     protected List<Line> lineDown = new ArrayList<Line>();
-    /**
-     * The constant COLOR.
-     */
     protected static final Color COLOR = Color.DIMGREY;
 
     /**
