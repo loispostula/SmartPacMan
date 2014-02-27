@@ -14,6 +14,15 @@ public class PrimsBoard extends Board {
     private static final int OUT = 2;
     private Random rand = new Random();
 
+    /**
+     * Instantiates a new Prims board.
+     *
+     * @param nX        the n x
+     * @param nY        the n y
+     * @param cellWidth the cell width
+     * @param sX        the s x
+     * @param sY        the s y
+     */
     public PrimsBoard(int nX, int nY, double cellWidth, int sX, int sY) {
         super(nX, nY, cellWidth, sX, sY);
 

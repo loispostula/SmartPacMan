@@ -14,6 +14,11 @@ public class PowerBall extends Sprite {
     private double dimension;
     private Canvas canva;
 
+    /**
+     * Instantiates a new Power ball.
+     *
+     * @param size the size
+     */
     public PowerBall(double size) {
         dimension = size;
         canva = new Canvas(dimension, dimension);
@@ -33,11 +38,19 @@ public class PowerBall extends Sprite {
         return 0;
     }
 
+    /**
+     * Handle death.
+     */
     public void handleDeath() {
         isDead = true;
         canva.setVisible(false);
     }
 
+    /**
+     * Is dead.
+     *
+     * @return the boolean
+     */
     public boolean isDead() {
         return isDead;
     }

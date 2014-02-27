@@ -7,6 +7,13 @@ import javafx.scene.shape.Line;
  * Documentation de la classe UpRightConnectedWall
  */
 public class UpRightConnectedWall extends CornerWall {
+    /**
+     * Instantiates a new Up right connected wall.
+     *
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     */
     public UpRightConnectedWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
 

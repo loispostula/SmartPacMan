@@ -5,6 +5,15 @@ package lpostula.pacman.wall;
  * Documentation de la classe WallFactory
  */
 public class WallFactory {
+    /**
+     * Build wall.
+     *
+     * @param position  the position
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     * @return the wall
+     */
     public static Wall buildWall(WallPosition position, double dimension, double posX, double posY) {
         Wall wall = null;
         if (position != null) {

@@ -5,19 +5,49 @@ package lpostula.pacman.wall;
  * Documentation de la classe WallPosition
  */
 public enum WallPosition {
-    LEFT,
-    UP,
-    RIGHT,
-    DOWN,
-    HORIZONTAL,
-    VERTICAL,
-    CROSS,
-    CORNERUPLEFT,
-    CORNERUPRIGHT,
-    CORNERDOWNRIGHT,
-    CORNERDOWNLEFT,
-    TLEFT,
-    TUP,
-    TRIGHT,
-    TDOWN
+    /**
+     * The LEFT.
+     */LEFT,
+    /**
+     * The UP.
+     */UP,
+    /**
+     * The RIGHT.
+     */RIGHT,
+    /**
+     * The DOWN.
+     */DOWN,
+    /**
+     * The HORIZONTAL.
+     */HORIZONTAL,
+    /**
+     * The VERTICAL.
+     */VERTICAL,
+    /**
+     * The CROSS.
+     */CROSS,
+    /**
+     * The CORNERUPLEFT.
+     */CORNERUPLEFT,
+    /**
+     * The CORNERUPRIGHT.
+     */CORNERUPRIGHT,
+    /**
+     * The CORNERDOWNRIGHT.
+     */CORNERDOWNRIGHT,
+    /**
+     * The CORNERDOWNLEFT.
+     */CORNERDOWNLEFT,
+    /**
+     * The TLEFT.
+     */TLEFT,
+    /**
+     * The TUP.
+     */TUP,
+    /**
+     * The TRIGHT.
+     */TRIGHT,
+    /**
+     * The TDOWN.
+     */TDOWN
 }

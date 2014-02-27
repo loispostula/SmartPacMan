@@ -6,6 +6,13 @@ package lpostula.pacman.wall;
  */
 public class DownConnectedWall extends RectangleWall {
 
+    /**
+     * Instantiates a new Down connected wall.
+     *
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     */
     public DownConnectedWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
         xBoundMin = wallIncrement;

@@ -9,21 +9,61 @@ import javafx.scene.shape.Line;
  * Documentation de la classe RectangleWall
  */
 public abstract class RectangleWall extends Wall {
+    /**
+     * The X bound min.
+     */
     protected double xBoundMin;
+    /**
+     * The X bound max.
+     */
     protected double xBoundMax;
+    /**
+     * The Y bound min.
+     */
     protected double yBoundMin;
+    /**
+     * The Y bound max.
+     */
     protected double yBoundMax;
+    /**
+     * The Width.
+     */
     protected double width;
+    /**
+     * The Height.
+     */
     protected double height;
+    /**
+     * The Check left.
+     */
     protected boolean checkLeft = true;
+    /**
+     * The Check right.
+     */
     protected boolean checkRight = true;
+    /**
+     * The Check up.
+     */
     protected boolean checkUp = true;
+    /**
+     * The Check down.
+     */
     protected boolean checkDown = true;
 
+    /**
+     * Instantiates a new Rectangle wall.
+     *
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     */
     public RectangleWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
     }
 
+    /**
+     * Construct canva.
+     */
     protected void constructCanva() {
         width = xBoundMax - xBoundMin;
         height = yBoundMax - yBoundMin;

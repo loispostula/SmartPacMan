@@ -7,6 +7,13 @@ import javafx.scene.shape.Line;
  * Documentation de la classe TLeftConnectedWall
  */
 public class TLeftConnectedWall extends TConnectedWall {
+    /**
+     * Instantiates a new T left connected wall.
+     *
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     */
     public TLeftConnectedWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
         xBoundBig = wallIncrement;

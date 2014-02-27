@@ -2,12 +2,12 @@ package lpostula.pacman.mobs;
 
 import javafx.scene.input.KeyCode;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import lpostula.gameengine.Sprite;
 import lpostula.pacman.board.Board;
+import lpostula.pacman.board.GeneticSolutionner;
 import lpostula.pacman.board.Point;
-import lpostula.pacman.board.RecursifSolutioner;
-import lpostula.pacman.board.Solutionner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,8 +17,14 @@ import java.util.List;
  * Documentation de la classe PacMan
  */
 public class PacMan extends Sprite {
+    /**
+     * The constant PACMAN_DIMENSION.
+     */
     public static final int PACMAN_DIMENSION = 7;
-    public static final double PACMAN_SPEED_FACTOR = 3.0;
+    /**
+     * The constant PACMAN_SPEED_FACTOR.
+     */
+    public static final double PACMAN_SPEED_FACTOR = 8;
     private int direction = 4;
     private int forbid = 4;
     private Board board;
@@ -26,7 +32,15 @@ public class PacMan extends Sprite {
     private int step = 0;
     private List<Integer> path = new ArrayList<>();
     private int score = 0;
+    private Hunter red;
+    private Point prec = new Point(-1, -1, null);
 
+    /**
+     * Instantiates a new Pac man.
+     *
+     * @param board       the board
+     * @param automatique the automatique
+     */
     public PacMan(Board board, boolean automatique) {
         this.board = board;
         Circle sphere = new Circle(PACMAN_DIMENSION);
@@ -36,33 +50,51 @@ public class PacMan extends Sprite {
         this.vX = this.vY = PACMAN_DIMENSION / PACMAN_SPEED_FACTOR;
         if (automatique) {
             auto = true;
-            Solutionner solutionner = new RecursifSolutioner(board);
-            path = solutionner.getPath();
-            this.vX = this.vY = board.getStepSize() / 10.0;
+            this.vX = this.vY = board.getStepSize() / PACMAN_SPEED_FACTOR;
         }
     }
 
+    /**
+     * Gets pos.
+     *
+     * @return the pos
+     */
     public Point getPos() {
         int x = (int) Math.floor(node.getTranslateX() / board.getStepSize());
         int y = (int) Math.floor(node.getTranslateY() / board.getStepSize());
         return new Point(x, y, null);
     }
 
+    /**
+     * Sets red.
+     *
+     * @param red the red
+     */
+    public void setRed(Hunter red) {
+        this.red = red;
+    }
+
+    private void computePath() {
+        Point start = getPos();
+        Point end = board.getEndPoint();
+        Point enemy = red.getPosition();
+        GeneticSolutionner solutionner = new GeneticSolutionner(board, start, prec, enemy);
+        solutionner.run();
+        path = solutionner.getPath();
+    }
+
     @Override
     public void update() {
-        if (auto) {
-            if (step / 10 < path.size()) {
-                if (step % 10 == 0) {
-                    int ind = step / 10;
-                    direction = path.get(ind);
-                }
-                ++step;
-            } else direction = 4;
+        if (step % PACMAN_SPEED_FACTOR == 0) {
+            computePath();
+            prec = getPos();
+            direction = path.get(0);
+            step = 0;
         }
+        ++step;
         int modX = 0;
         int modY = 0;
         switch (direction) {
-
             case 0:
                 modX = 0;
                 modY = -1;
@@ -88,8 +120,6 @@ public class PacMan extends Sprite {
         }
         node.setTranslateX(node.getTranslateX() + (modX * vX));
         node.setTranslateY(node.getTranslateY() + (modY * vY));
-
-
     }
 
     @Override
@@ -112,6 +142,11 @@ public class PacMan extends Sprite {
         return collided;
     }
 
+    /**
+     * Move void.
+     *
+     * @param code the code
+     */
     public void move(KeyCode code) {
         if (code.equals(KeyCode.UP)) {
             if (forbid != 2) {
@@ -139,11 +174,17 @@ public class PacMan extends Sprite {
 
     }
 
+    /**
+     * Stop void.
+     */
     public void stop() {
         forbid = direction;
         direction = 4;
     }
 
+    /**
+     * Handle death.
+     */
     public void handleDeath() {
         System.out.println(score);
     }
@@ -151,5 +192,24 @@ public class PacMan extends Sprite {
     @Override
     public int getDirection() {
         return direction;
+    }
+
+    /**
+     * Gets color.
+     *
+     * @return the color
+     */
+    public Paint getColor() {
+        return Color.YELLOW;
+    }
+
+
+    /**
+     * Gets path.
+     *
+     * @return the path
+     */
+    public List<Integer> getPath() {
+        return path;
     }
 }

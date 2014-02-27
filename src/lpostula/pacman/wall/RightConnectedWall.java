@@ -6,6 +6,13 @@ package lpostula.pacman.wall;
  */
 public class RightConnectedWall extends RectangleWall {
 
+    /**
+     * Instantiates a new Right connected wall.
+     *
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     */
     public RightConnectedWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
         xBoundMin = wallIncrement;

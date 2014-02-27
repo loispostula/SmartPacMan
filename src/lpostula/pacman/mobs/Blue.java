@@ -9,6 +9,12 @@ import lpostula.pacman.board.RecursifSolutioner;
  * Documentation de la classe Red
  */
 public class Blue extends Hunter {
+    /**
+     * Instantiates a new Blue.
+     *
+     * @param board  the board
+     * @param pacman the pacman
+     */
     public Blue(Board board, PacMan pacman) {
         super(board, pacman);
         MOB_COLOR = Color.BLUE;

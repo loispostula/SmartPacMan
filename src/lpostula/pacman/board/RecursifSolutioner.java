@@ -1,5 +1,6 @@
 package lpostula.pacman.board;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,8 +12,14 @@ public class RecursifSolutioner extends Solutionner {
     private int[][] maze;
     private Point end;
     private Point start;
-    private boolean stop = false;
+    private boolean solved = false;
+    private List<Point> visited = new ArrayList<>();
 
+    /**
+     * Instantiates a new Recursif solutioner.
+     *
+     * @param board the board
+     */
     public RecursifSolutioner(Board board) {
         super(board);
         int[][] tmpMaze = board.getBoard();
@@ -23,9 +30,17 @@ public class RecursifSolutioner extends Solutionner {
         end = board.getEndPoint();
         start = board.getStartPoint();
         path = new LinkedList<>();
+
         run();
     }
 
+    /**
+     * Instantiates a new Recursif solutioner.
+     *
+     * @param board the board
+     * @param start the start
+     * @param end   the end
+     */
     public RecursifSolutioner(Board board, Point start, Point end) {
         super(board);
         int[][] tmpMaze = board.getBoard();
@@ -58,16 +73,18 @@ public class RecursifSolutioner extends Solutionner {
                 cand.y < 0 || cand.y >= board.height) {
             return false;
         }
-        return (maze[cand.x][cand.y] == 0 || maze[cand.x][cand.y] == 3);
+        return ((maze[cand.x][cand.y] == 0 || maze[cand.x][cand.y] == 3));
 
     }
 
     private void addInMaze(Point cand) {
         maze[cand.x][cand.y] = 4;
+        visited.add(cand);
     }
 
     private void removeInMaze(Point cand) {
         maze[cand.x][cand.y] = 0;
+        //visited.remove(cand);
     }
 
     private int invert(int i) {
@@ -87,20 +104,22 @@ public class RecursifSolutioner extends Solutionner {
 
     private boolean compute(int prev, Point current) {
         if (current.equals(end)) {
+            solved = true;
             return true;
         }
-
-        Point[] adjacentCell = getAdjacentCell(current);
-        for (int i = 0; i < 4; ++i) {
-            if (i != invert(prev)) {
-                Point cand = adjacentCell[i];
-                if (cellFree(cand)) {
-                    addInMaze(cand);
-                    if (compute(i, cand)) {
-                        path.add(0, i);
-                        return true;
+        if (visited.size() < (board.getBoard().length * board.getBoard()[0].length)) {
+            Point[] adjacentCell = getAdjacentCell(current);
+            for (int i = 0; i < 4; ++i) {
+                if (i != invert(prev)) {
+                    Point cand = adjacentCell[i];
+                    if (cellFree(cand) && !visited.contains(cand)) {
+                        addInMaze(cand);
+                        if (compute(i, cand)) {
+                            path.add(0, i);
+                            return true;
+                        }
+                        removeInMaze(cand);
                     }
-                    removeInMaze(cand);
                 }
             }
         }
@@ -165,5 +184,14 @@ public class RecursifSolutioner extends Solutionner {
 
     public List<Integer> getPath() {
         return path;
+    }
+
+    /**
+     * Solved boolean.
+     *
+     * @return the boolean
+     */
+    public boolean solved() {
+        return solved;
     }
 }

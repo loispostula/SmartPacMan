@@ -7,6 +7,13 @@ import javafx.scene.shape.Line;
  * Documentation de la classe UpLeftConnectedWall
  */
 public class DownLeftConnectedWall extends CornerWall {
+    /**
+     * Instantiates a new Down left connected wall.
+     *
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     */
     public DownLeftConnectedWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
 

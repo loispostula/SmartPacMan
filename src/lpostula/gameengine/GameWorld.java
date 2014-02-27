@@ -23,12 +23,21 @@ public abstract class GameWorld {
     private final String windowTitle;
     private final SpriteManager spriteManager = new SpriteManager();
 
+    /**
+     * Instantiates a new Game world.
+     *
+     * @param fps   the fps
+     * @param title the title
+     */
     public GameWorld(final int fps, final String title) {
         framesPerSecond = fps;
         windowTitle = title;
         buildAndSetGameLoop();
     }
 
+    /**
+     * Build and set game loop.
+     */
     protected final void buildAndSetGameLoop() {
 
         final Duration oneFrameAmt = Duration.millis(1000 / getFramesPerSecond());
@@ -53,26 +62,48 @@ public abstract class GameWorld {
                 .build());
     }
 
+    /**
+     * Initialize void.
+     *
+     * @param primaryStage the primary stage
+     */
     public abstract void initialize(final Stage primaryStage);
 
+    /**
+     * Update path.
+     */
     public void updatePath() {
     }
 
     ;
 
+    /**
+     * Begin game loope.
+     */
     public void beginGameLoope() {
         getGameLoop().play();
     }
 
+    /**
+     * Update sprites.
+     */
     protected void updateSprites() {
         for (Sprite sprite : spriteManager.getAllSprites()) {
             handleUpdate(sprite);
         }
     }
 
+    /**
+     * Handle update.
+     *
+     * @param sprite the sprite
+     */
     protected void handleUpdate(Sprite sprite) {
     }
 
+    /**
+     * Check collisions.
+     */
     protected void checkCollisions() {
         // check other sprite's collisions
         spriteManager.resetCollisionsToCheck();
@@ -90,46 +121,101 @@ public abstract class GameWorld {
         }
     }
 
+    /**
+     * Handle collision.
+     *
+     * @param spriteA the sprite a
+     * @param spriteB the sprite b
+     * @return the boolean
+     */
     protected boolean handleCollision(Sprite spriteA, Sprite spriteB) {
         return false;
     }
 
+    /**
+     * Cleanup sprites.
+     */
     protected void cleanupSprites() {
         spriteManager.cleanUpSprites();
     }
 
+    /**
+     * Gets frames per second.
+     *
+     * @return the frames per second
+     */
     protected int getFramesPerSecond() {
         return framesPerSecond;
     }
 
+    /**
+     * Gets window title.
+     *
+     * @return the window title
+     */
     public String getWindowTitle() {
         return windowTitle;
     }
 
+    /**
+     * Gets game loop.
+     *
+     * @return the game loop
+     */
     protected static Timeline getGameLoop() {
         return gameLoop;
     }
 
+    /**
+     * Sets game loop.
+     *
+     * @param gameLoop the game loop
+     */
     protected static void setGameLoop(Timeline gameLoop) {
         GameWorld.gameLoop = gameLoop;
     }
 
+    /**
+     * Gets sprite manager.
+     *
+     * @return the sprite manager
+     */
     protected SpriteManager getSpriteManager() {
         return spriteManager;
     }
 
+    /**
+     * Gets game surface.
+     *
+     * @return the game surface
+     */
     public Scene getGameSurface() {
         return gameSurface;
     }
 
+    /**
+     * Sets game surface.
+     *
+     * @param gameSurface the game surface
+     */
     protected void setGameSurface(Scene gameSurface) {
         this.gameSurface = gameSurface;
     }
 
+    /**
+     * Gets scene nodes.
+     *
+     * @return the scene nodes
+     */
     public Group getSceneNodes() {
         return sceneNodes;
     }
 
+    /**
+     * Sets scene nodes.
+     *
+     * @param sceneNodes the scene nodes
+     */
     protected void setSceneNodes(Group sceneNodes) {
         this.sceneNodes = sceneNodes;
     }

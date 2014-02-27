@@ -9,6 +9,13 @@ import javafx.scene.shape.Line;
  */
 public class TDownConnectedWall extends TConnectedWall {
 
+    /**
+     * Instantiates a new T down connected wall.
+     *
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     */
     public TDownConnectedWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
         xBoundBig = 0.0;

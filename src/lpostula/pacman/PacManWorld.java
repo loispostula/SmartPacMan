@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import lpostula.gameengine.GameWorld;
 import lpostula.gameengine.Sprite;
 import lpostula.pacman.board.Board;
-import lpostula.pacman.board.PrimsBoard;
+import lpostula.pacman.board.PacManBoard;
 import lpostula.pacman.mobs.*;
 import lpostula.pacman.wall.Wall;
 import lpostula.pacman.wall.WallFactory;
@@ -29,6 +29,7 @@ public class PacManWorld extends GameWorld {
     private Blue blueMob;
     private Path blueMobPath;
     private Path redMobPath;
+    private Path pacmanPath;
     private boolean auto = true;
     private long timeLoop = 0;
     private Board board;
@@ -36,6 +37,15 @@ public class PacManWorld extends GameWorld {
     private int row;
     private final double cellWidth = 20;
 
+    /**
+     * Instantiates a new Pac man world.
+     *
+     * @param fps   the fps
+     * @param title the title
+     * @param auto  the auto
+     * @param col   the col
+     * @param row   the row
+     */
     public PacManWorld(int fps, String title, boolean auto, int col, int row) {
         super(fps, title);
         this.auto = auto;
@@ -55,17 +65,22 @@ public class PacManWorld extends GameWorld {
         //adding the pacman
 
 
-        board = new PrimsBoard(column, row, cellWidth, 1, 1);
+        //board = new PrimsBoard(column, row, cellWidth, 1, 1);
+        //board = new CyclicBoard(column, row, cellWidth, 1, 1);//todo
         //board = new AldousBorder(column, row, cellWidth, 1, 1);//todo link with optionchooser, so factory for board
+        board = new PacManBoard(column, row, cellWidth, 1, 1);
         createWall(board, column, row, cellWidth);
 
         pacman = new PacMan(board, true);
         getSpriteManager().addSprites(pacman);
         getSceneNodes().getChildren().add(pacman.node);
-        pacman.node.setTranslateX(30);
-        pacman.node.setTranslateY(30);
+        pacman.node.setTranslateY(2 * cellWidth - cellWidth / 2.0);
+        pacman.node.setTranslateX(1 * cellWidth + (cellWidth / 2));
+        //pacmanPath = new Path(column, row, cellWidth, pacman);
+        //getSceneNodes().getChildren().add(0, pacmanPath.node);
 
         buildMobs();
+        pacman.setRed(redMob);
 
         if (auto) {
             setInput(primaryStage);
@@ -74,35 +89,36 @@ public class PacManWorld extends GameWorld {
         final Timeline gameLoop = getGameLoop();
     }
 
+    /**
+     * Build mobs.
+     */
     public void buildMobs() {
         redMob = new Red(board, pacman);
         getSpriteManager().addSprites(redMob);
-        redMob.node.setTranslateX((column - 1) * board.getStepSize() + (cellWidth / 2));
-        redMob.node.setTranslateY(1 * board.getStepSize() + (cellWidth / 2));
-        redMobPath = new Path(column, row, cellWidth, redMob);
+        redMob.node.setTranslateX(9 * cellWidth + (cellWidth / 2));
+        redMob.node.setTranslateY((row / 2) * cellWidth - cellWidth / 2.0);
+        //redMobPath = new Path(column, row, cellWidth, redMob);
 
-        blueMob = new Blue(board, pacman);
+        /*blueMob = new Blue(board, pacman);
         getSpriteManager().addSprites(blueMob);
         blueMob.node.setTranslateX(1 * board.getStepSize() + (cellWidth / 2));
-        blueMob.node.setTranslateY((row - 1) * board.getStepSize() + (cellWidth / 2));
-        blueMobPath = new Path(column, row, cellWidth, blueMob);
+        blueMob.node.setTranslateY((row - 2) * board.getStepSize() + (cellWidth / 2));
+        blueMobPath = new Path(column, row, cellWidth, blueMob);*/
 
         getSceneNodes().getChildren().add(redMob.node);
-        getSceneNodes().getChildren().add(blueMob.node);
-        getSceneNodes().getChildren().add(0, redMobPath.node);
-        getSceneNodes().getChildren().add(0, blueMobPath.node);
+        //getSceneNodes().getChildren().add(blueMob.node);
+//        getSceneNodes().getChildren().add(0, redMobPath.node);
+        //getSceneNodes().getChildren().add(0, blueMobPath.node);
     }
 
     @Override
     public void updatePath() {
         int skip = 0;
         if (timeLoop % 10 == 0) {
-            redMobPath.update(skip);
-            blueMobPath.update(skip);
+            //pacmanPath.update(skip);
+            //redMobPath.update(skip);
+            //blueMobPath.update(skip);
             ++skip;
-            if (timeLoop % 30 == 0) {
-                skip = 0;
-            }
         }
         ++timeLoop;
     }
@@ -110,64 +126,62 @@ public class PacManWorld extends GameWorld {
     private int numberOfNeighboor(int[][] maze, int width, int height, int x, int y) {
         int number = 0;
         if (x > 0 && maze[x - 1][y] == 1) ++number;
-        if (x <= width - 1 && maze[x + 1][y] == 1) ++number;
+        if (x < width && maze[x + 1][y] == 1) ++number;
         if (y > 0 && maze[x][y - 1] == 1) ++number;
-        if (y <= height - 1 && maze[x][y + 1] == 1) ++number;
+        if (y < height && maze[x][y + 1] == 1) ++number;
         return number;
     }
 
+    /**
+     * Create wall.
+     *
+     * @param board the board
+     * @param width the width
+     * @param height the height
+     * @param size the size
+     */
     public void createWall(Board board, int width, int height, double size) {
         int[][] maze = board.getBoard();
-        int[][] withWall = new int[width + 1][height + 1];
-        for (int i = 0; i <= height; ++i) {
-            withWall[width][i] = 1;
-        }
         for (int i = 0; i < width; ++i) {
-            withWall[i][height] = 1;
             for (int j = 0; j < height; ++j) {
-                withWall[i][j] = maze[i][j];
-            }
-        }
-        for (int i = 0; i <= width; ++i) {
-            for (int j = 0; j <= height; ++j) {
-                if (withWall[i][j] == 1) {
+                if (maze[i][j] == 1) {
                     WallPosition pos = null;
-                    int numNeighboor = numberOfNeighboor(withWall, width, height, i, j);
-                    switch (numberOfNeighboor(withWall, width, height, i, j)) {
+                    int numNeighboor = numberOfNeighboor(maze, width - 1, height - 1, i, j);
+                    switch (numNeighboor) {
                         case 1:
                             //we need to find wich one
-                            if (i > 0 && withWall[i - 1][j] == 1) pos = WallPosition.LEFT;
-                            else if (i < width && withWall[i + 1][j] == 1) pos = WallPosition.RIGHT;
-                            else if (j > 0 && withWall[i][j - 1] == 1) pos = WallPosition.UP;
-                            else if (j < height && withWall[i][j + 1] == 1) pos = WallPosition.DOWN;
+                            if (i > 0 && maze[i - 1][j] == 1) pos = WallPosition.LEFT;
+                            else if (i < width && maze[i + 1][j] == 1) pos = WallPosition.RIGHT;
+                            else if (j > 0 && maze[i][j - 1] == 1) pos = WallPosition.UP;
+                            else if (j < height && maze[i][j + 1] == 1) pos = WallPosition.DOWN;
                             break;
                         case 2:
-                            if (i > 0 && withWall[i - 1][j] == 1) {
-                                if (j > 0 && withWall[i][j - 1] == 1) pos = WallPosition.CORNERUPLEFT;
-                                else if (j < height && withWall[i][j + 1] == 1) pos = WallPosition.CORNERDOWNLEFT;
+                            if (i > 0 && maze[i - 1][j] == 1) {
+                                if (j > 0 && maze[i][j - 1] == 1) pos = WallPosition.CORNERUPLEFT;
+                                else if (j < height - 1 && maze[i][j + 1] == 1) pos = WallPosition.CORNERDOWNLEFT;
                                 else pos = WallPosition.HORIZONTAL;
-                            } else if (i < width && withWall[i + 1][j] == 1) {
-                                if (j > 0 && withWall[i][j - 1] == 1) pos = WallPosition.CORNERUPRIGHT;
-                                else if (j < height && withWall[i][j + 1] == 1) pos = WallPosition.CORNERDOWNRIGHT;
+                            } else if (i < width - 1 && maze[i + 1][j] == 1) {
+                                if (j > 0 && maze[i][j - 1] == 1) pos = WallPosition.CORNERUPRIGHT;
+                                else if (j < height - 1 && maze[i][j + 1] == 1) pos = WallPosition.CORNERDOWNRIGHT;
                                 else pos = WallPosition.HORIZONTAL;
                             } else pos = WallPosition.VERTICAL;
                             break;
                         case 3:
-                            if (i <= 0 || withWall[i - 1][j] == 0) pos = WallPosition.TRIGHT;
-                            else if (i >= width - 1 || withWall[i + 1][j] == 0) pos = WallPosition.TLEFT;
-                            else if (j <= 0 || withWall[i][j - 1] == 0) pos = WallPosition.TDOWN;
-                            else if (j >= height - 1 || withWall[i][j + 1] == 0) pos = WallPosition.TUP;
+                            if (i <= 0 || maze[i - 1][j] == 0) pos = WallPosition.TRIGHT;
+                            else if (i >= width - 1 || maze[i + 1][j] == 0) pos = WallPosition.TLEFT;
+                            else if (j <= 0 || maze[i][j - 1] == 0) pos = WallPosition.TDOWN;
+                            else if (j >= height - 1 || maze[i][j + 1] == 0) pos = WallPosition.TUP;
                             break;
                         case 4:
                             pos = WallPosition.CROSS;
 
                     }
                     addWall(pos, size, i * size + 1, j * size + 1);
-                } else if (withWall[i][j] == 2) {
-                    addCanva(Color.BLUE, size, i * size + 1, j * size + 1);
-                } else if (withWall[i][j] == 3) {
-                    addCanva(Color.RED, size, i * size + 1, j * size + 1);
-                } else if (withWall[i][j] == 0) {
+                } else if (maze[i][j] == 2) {
+                    //addCanva(Color.BLUE, size, i * size + 1, j * size + 1);
+                } else if (maze[i][j] == 3) {
+                    //addCanva(Color.RED, size, i * size + 1, j * size + 1);
+                } else if (maze[i][j] == 0) {
                     addPowerBall(size, i * size + 1, j * size + 1);
                 }
             }
@@ -204,19 +218,24 @@ public class PacManWorld extends GameWorld {
     @Override
     protected void handleUpdate(Sprite sprite) {
 
-        if (sprite instanceof PacMan) {
+        /*if (sprite instanceof PacMan) {
             PacMan pac = (PacMan) sprite;
-            if (pac.node.getTranslateX() > (getGameSurface().getWidth() - pac.node.getBoundsInParent().getWidth())) {
-                pac.node.setTranslateX(getGameSurface().getWidth() - pac.node.getBoundsInParent().getWidth());
-            } else if (pac.node.getTranslateX() < 0) {
-                pac.node.setTranslateX(0);
+            double x = pac.node.getTranslateX() / cellWidth;
+            double y = pac.node.getTranslateY() / cellWidth;
+            int wallType = board.getBoard()[((int) Math.floor(x))][((int) Math.floor(y))];
+            if (wallType == 3) {
+                getGameLoop().stop();
+                if (pac.getDirection() == 2) {
+                    pacman.node.setTranslateY((row / 2) * cellWidth - cellWidth / 2.0);
+                    pacman.node.setTranslateX(cellWidth / 2.0);
+                }
+            } else if (wallType == 2) {
+                if (pac.getDirection() == 1) {
+                    pacman.node.setTranslateY((row / 2) * cellWidth - cellWidth / 2.0);
+                    pacman.node.setTranslateX((column * cellWidth) - (cellWidth / 2.0));
+                }
             }
-            if (pac.node.getTranslateY() > (getGameSurface().getHeight() - pac.node.getBoundsInParent().getHeight())) {
-                pac.node.setTranslateY(getGameSurface().getHeight() - pac.node.getBoundsInParent().getHeight());
-            } else if (pac.node.getTranslateY() < 0) {
-                pac.node.setTranslateY(0);
-            }
-        }
+        }*/
         sprite.update();
     }
 
@@ -229,11 +248,12 @@ public class PacManWorld extends GameWorld {
                         pacman.handleDeath();
                         getGameLoop().pause();
                     } else if (spriteA instanceof Wall) {
-                        pacman.stop();
+                        //pacman.stop();
                     }
                 }
                 if (spriteA == pacman && spriteB instanceof PowerBall) {
                     ((PowerBall) spriteB).handleDeath();
+                    board.setEaten(pacman.getPos());
                 }
             }
         }

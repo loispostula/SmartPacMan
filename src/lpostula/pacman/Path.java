@@ -4,7 +4,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import lpostula.pacman.board.Point;
-import lpostula.pacman.mobs.Hunter;
+import lpostula.pacman.mobs.PacMan;
 
 import java.util.List;
 
@@ -14,14 +14,25 @@ import java.util.List;
  */
 public class Path {
     private List<Integer> path;
+    /**
+     * The Node.
+     */
     public Canvas node;
     private GraphicsContext gc;
     private int width;
     private int height;
     private double stepSize;
-    private Hunter mob;
+    private PacMan pac;
 
-    public Path(int nX, int nY, double size, Hunter mob) {
+    /**
+     * Instantiates a new Path.
+     *
+     * @param nX   the n x
+     * @param nY   the n y
+     * @param size the size
+     * @param pac  the pac
+     */
+    public Path(int nX, int nY, double size, PacMan pac) {
         width = nX;
         height = nY;
         stepSize = size;
@@ -29,18 +40,31 @@ public class Path {
         gc = node.getGraphicsContext2D();
         gc.setFill(Color.TRANSPARENT);
         gc.setLineWidth(size * 0.2);
-        gc.setStroke(mob.getColor());
-        this.mob = mob;
-        path = mob.getPath();
+        gc.setStroke(pac.getColor());
+        this.pac = pac;
+        path = pac.getPath();
     }
 
+
+    /**
+     * Update void.
+     *
+     * @param skip the skip
+     */
     public void update(int skip) {
-        path = mob.getPath();
+        path = pac.getPath();
         gc.clearRect(0, 0, width * stepSize, height * stepSize);
-        Point pos = mob.getInitPosForPath();
+        Point pos = pac.getPos();
         renderPath(pos.x, pos.y, skip);
     }
 
+    /**
+     * Render path.
+     *
+     * @param startX the start x
+     * @param startY the start y
+     * @param skip the skip
+     */
     public void renderPath(int startX, int startY, int skip) {
         int x = startX;
         int y = startY;

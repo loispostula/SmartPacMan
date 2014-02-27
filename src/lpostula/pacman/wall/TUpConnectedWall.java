@@ -9,6 +9,13 @@ import javafx.scene.shape.Line;
  */
 public class TUpConnectedWall extends TConnectedWall {
 
+    /**
+     * Instantiates a new T up connected wall.
+     *
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     */
     public TUpConnectedWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
         xBoundBig = 0.0;

@@ -6,26 +6,61 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Adding a recursive solutionner in order to test the displacement of the mob, it's now working">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/CyclicBoard.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/GeneticSolutionner.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/mobs/PowerBall.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/SmartPacMan.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/artifacts/SmartPacMan_jar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/findbugs-idea.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/JavaFXApp.xml" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lpostula/Main.java" afterPath="$PROJECT_DIR$/src/lpostula/MainChooser.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/lpostula/pacman/pacmanApp.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/Main.java" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Adding the eating of powerBall">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/AStarSolutionner.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/genetic/CrossBehaviour.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/Direction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/genetic/FitnessBehaviour.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/genetic/ImprovementBehaviour.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/genetic/Individual.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/genetic/MutateBehaviour.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/PacManBoard.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/genetic/Population.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/genetic/Sort.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/genetic/Vector.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/lpostula/pacman/genetic/Village.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/jgap.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/mobs/Blue.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/mobs/Blue.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/board/Board.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/Board.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/CornerWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/CornerWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/board/CyclicBoard.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/CyclicBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/DownConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/DownConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/DownLeftConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/DownLeftConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/DownRightConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/DownRightConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/gameengine/GameWorld.java" afterPath="$PROJECT_DIR$/src/lpostula/gameengine/GameWorld.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/board/GeneticSolutionner.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/GeneticSolutionner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/HorizontalConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/HorizontalConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/mobs/Hunter.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/mobs/Hunter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/LeftConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/LeftConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/Main.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/mobs/PacMan.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/mobs/PacMan.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/Path.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/Path.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/board/Point.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/Point.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/mobs/PowerBall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/mobs/PowerBall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/board/PrimsBoard.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/PrimsBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/RectangleWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/RectangleWall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/board/RecursifSolutioner.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/RecursifSolutioner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/mobs/Red.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/mobs/Red.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/RightConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/RightConnectedWall.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SmartPacMan.iml" afterPath="$PROJECT_DIR$/SmartPacMan.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/board/Solutionner.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/board/Solutionner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/optionChooser/optionChooserController.java" afterPath="$PROJECT_DIR$/src/lpostula/optionChooser/optionChooserController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/gameengine/Sprite.java" afterPath="$PROJECT_DIR$/src/lpostula/gameengine/Sprite.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/gameengine/SpriteManager.java" afterPath="$PROJECT_DIR$/src/lpostula/gameengine/SpriteManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/TConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/TConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/TDownConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/TDownConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/TLeftConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/TLeftConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/TRightConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/TRightConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/TUpConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/TUpConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/UpConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/UpConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/UpLeftConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/UpLeftConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/UpRightConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/UpRightConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/VerticalConnectedWall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/VerticalConnectedWall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/Wall.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/Wall.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/WallFactory.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/WallFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/lpostula/pacman/wall/WallPosition.java" afterPath="$PROJECT_DIR$/src/lpostula/pacman/wall/WallPosition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/findbugs-idea.xml" afterPath="$PROJECT_DIR$/.idea/findbugs-idea.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -91,59 +126,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="PacManWorld.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="8" selection-start="2046" selection-end="2046" vertical-scroll-proportion="0.0" vertical-offset="603" max-vertical-offset="4284">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GeneticSolutionner.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/GeneticSolutionner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="53" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RecursifSolutioner.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/RecursifSolutioner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="165" column="36" selection-start="4583" selection-end="4583" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="3078">
+            <state line="14" column="38" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
               <folding>
-                <element signature="e#4609#4610#0" expanded="true" />
+                <element signature="docComment;class#Main#0" expanded="true" />
+                <element signature="docComment;method#main#0;class#Main#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PrimsBoard.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/PrimsBoard.java">
+      <file leaf-file-name="Sprite.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/Sprite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="29" selection-start="646" selection-end="646" vertical-scroll-proportion="0.5116279" vertical-offset="108" max-vertical-offset="1494">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Board.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/Board.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="40" column="29" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CyclicBoard.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/CyclicBoard.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="40" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
+            <state line="11" column="22" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
               <folding>
-                <element signature="docComment;method#CyclicBoard#0;class#CyclicBoard#0" expanded="true" />
+                <element signature="docComment;field#animations#0;class#Sprite#0" expanded="true" />
+                <element signature="docComment;field#node#0;class#Sprite#0" expanded="true" />
+                <element signature="docComment;field#vX#0;class#Sprite#0" expanded="true" />
+                <element signature="docComment;field#vY#0;class#Sprite#0" expanded="true" />
+                <element signature="docComment;field#isDead#0;class#Sprite#0" expanded="true" />
+                <element signature="docComment;method#update#0;class#Sprite#0" expanded="true" />
+                <element signature="docComment;method#getDirection#0;class#Sprite#0" expanded="true" />
+                <element signature="docComment;method#collide#0;class#Sprite#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SpriteManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/SpriteManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1476">
+              <folding>
+                <element signature="docComment;method#getAllSprites#0;class#SpriteManager#0" expanded="true" />
+                <element signature="docComment;method#addSprites#0;class#SpriteManager#0" expanded="true" />
+                <element signature="docComment;method#removeSprites#0;class#SpriteManager#0" expanded="true" />
+                <element signature="docComment;method#getSpritesToBeRemoved#0;class#SpriteManager#0" expanded="true" />
+                <element signature="docComment;method#addSpritesToBeRemoved#0;class#SpriteManager#0" expanded="true" />
+                <element signature="docComment;method#getCollisionsToCheck#0;class#SpriteManager#0" expanded="true" />
+                <element signature="docComment;method#resetCollisionsToCheck#0;class#SpriteManager#0" expanded="true" />
+                <element signature="docComment;method#cleanUpSprites#0;class#SpriteManager#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameWorld.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/GameWorld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="66" column="6" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.6419019" vertical-offset="486" max-vertical-offset="3510">
+              <folding>
+                <element signature="docComment;method#GameWorld#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#buildAndSetGameLoop#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#updatePath#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#beginGameLoope#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#updateSprites#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#handleUpdate#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#checkCollisions#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#handleCollision#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#cleanupSprites#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#getFramesPerSecond#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#getWindowTitle#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#getGameLoop#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#setGameLoop#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#getSpriteManager#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#getGameSurface#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#setGameSurface#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#getSceneNodes#0;class#GameWorld#0" expanded="true" />
+                <element signature="docComment;method#setSceneNodes#0;class#GameWorld#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PacManWorld.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="78" column="35" selection-start="2443" selection-end="2443" vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="4644">
+              <folding>
+                <element signature="docComment;method#PacManWorld#0;class#PacManWorld#0" expanded="true" />
+                <element signature="docComment;method#buildMobs#0;class#PacManWorld#0" expanded="true" />
+                <element signature="docComment;method#createWall#0;class#PacManWorld#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Path.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/Path.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="33" selection-start="1392" selection-end="1392" vertical-scroll-proportion="0.0" vertical-offset="1068" max-vertical-offset="1854">
+              <folding>
+                <element signature="docComment;field#node#0;class#Path#0" expanded="true" />
+                <element signature="docComment;method#Path#0;class#Path#0" expanded="true" />
+                <element signature="docComment;method#update#0;class#Path#0" expanded="true" />
+                <element signature="docComment;method#renderPath#0;class#Path#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -162,57 +242,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/DownRightConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/UpRightConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TupConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TUpConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TDownConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TLeftConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TRightConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/Board.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/PacMan.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/WallFactory.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/RectangleWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/CornerWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/Point.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/gameengine/Sprite.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/Wall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/gameengine/GameWorld.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/Path.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/mobs/Blud.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/mobs/Hunter.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/mobs/Red.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/optionChooser/FormSample/java.java" />
-        <option value="$PROJECT_DIR$/src/FormController.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/optionChooser/formstyle.css" />
-        <option value="$PROJECT_DIR$/src/lpostula/MazePane.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/MazeScene.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/MazePan.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/optionChooser/Form.fxml" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacmanApp.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/optionChooser/FormController.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/optionChooser/FormSample.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/optionChooser/optionChooser.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/Main.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/optionChooser/optionChooser.fxml" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/mobs/powerBall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/LeftConnectedWall.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/PrimsBoard.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/CyclicBoard.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/FitnessBehavior.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/Individual.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/board/Board.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/RecursifSolutioner.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/AStarSolutionner.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/Direction.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/GeneticSolutionner.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/PacManBoard.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/Point.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/board/Solutionner.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/AldousBorder.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/pacmanApp.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/optionChooser/optionChooserController.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/Main.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/RecursifSolutioner.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/CrossBehaviour.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/ImprovementBehaviour.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/FitnessBehaviour.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/MutateBehaviour.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/Population.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/Sort.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/Vector.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/genetic/Village.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/mobs/Blue.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/mobs/Hunter.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/mobs/PacMan.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/mobs/PowerBall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/mobs/Red.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/Wall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/WallPosition.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/WallFactory.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/VerticalConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/UpRightConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/UpConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/UpLeftConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TUpConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TRightConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TLeftConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TDownConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/TConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/RectangleWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/RightConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/LeftConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/HorizontalConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/DownRightConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/DownLeftConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/DownConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/wall/CornerWall.java" />
         <option value="$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/GeneticSolutionner.java" />
-        <option value="$PROJECT_DIR$/src/lpostula/pacman/board/CyclicBoard.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/Path.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/pacman/Main.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/gameengine/Sprite.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/gameengine/SpriteManager.java" />
+        <option value="$PROJECT_DIR$/src/lpostula/gameengine/GameWorld.java" />
       </list>
     </option>
   </component>
@@ -251,7 +331,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -333,6 +412,58 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="wall" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartPacMan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartPacMan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lpostula" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pacman" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="genetic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartPacMan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SmartPacMan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lpostula" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pacman" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="board" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -355,12 +486,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="optionChooser" />
+              <option name="myItemId" value="gameengine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -376,15 +508,15 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="FullScreen" value="false" />
-    <property name="SearchEverywhereHistory" value="W&#10;=" />
-    <property name="options.lastSelected" value="preferences.JavaFX" />
+    <property name="SearchEverywhereHistory" value="boo&#10;W&#10;=" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$USER_HOME$/IDE/JavaFXSceneBuilder1.1/JavaFXSceneBuilder1.1" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Documents/jgap_3.6.2_full/jgap.jar!/" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -753,7 +885,19 @@
       <workItem from="1392990284502" duration="2318000" />
       <workItem from="1393099831093" duration="630000" />
       <workItem from="1393146487100" duration="868000" />
-      <workItem from="1393240423137" duration="2235000" />
+      <workItem from="1393240423137" duration="6054000" />
+      <workItem from="1393251659647" duration="644000" />
+      <workItem from="1393254753549" duration="1754000" />
+      <workItem from="1393256796498" duration="3642000" />
+      <workItem from="1393266759313" duration="20021000" />
+      <workItem from="1393347577658" duration="9000" />
+      <workItem from="1393411238796" duration="2909000" />
+      <workItem from="1393420276758" duration="113000" />
+      <workItem from="1393420993595" duration="1727000" />
+      <workItem from="1393426186313" duration="2823000" />
+      <workItem from="1393445615968" duration="279000" />
+      <workItem from="1393445907721" duration="9234000" />
+      <workItem from="1393488443825" duration="400000" />
     </task>
     <task id="LOCAL-00001" summary="Ajout du spriteManager">
       <created>1392372003464</created>
@@ -819,60 +963,64 @@
       <created>1392583152763</created>
       <updated>1392583152763</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Adding the eating of powerBall">
+      <created>1393242673515</created>
+      <updated>1393242673515</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111230000" />
+    <option name="totallyTimeSpent" value="158604000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="-3" width="1370" height="748" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="100" y="100" width="1154" height="541" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2306003" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40857142" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32737276" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18470418" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3982684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18470418" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3968254" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33235726" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30387932" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1566618" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="100" y="100" width="1154" height="541" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4967462" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3218707" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="100" y="100" width="1154" height="541" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1566618" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" x="100" y="100" width="1154" height="541" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Statistic" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -881,7 +1029,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2306003" sideWeight="0.6703755" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40857142" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2957143" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -890,10 +1038,10 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18470418" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329429" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756132" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3982684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39714286" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="FindBugs-IDEA" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32737276" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -931,7 +1079,8 @@
     <MESSAGE value="Adding a recursive solutionner in order to test the displacement of the mob, it's now working" />
     <MESSAGE value="Ajout des mobs de poursuite, amélioration de l'algorithme récursif, afin qu'il prenne moins de temps" />
     <MESSAGE value="Adding a option chooser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding a option chooser" />
+    <MESSAGE value="Adding the eating of powerBall" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the eating of powerBall" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -962,301 +1111,660 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/GameWorld.java">
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/AStarSolutionner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="41" selection-start="1440" selection-end="1440" vertical-scroll-proportion="0.0" vertical-offset="774" max-vertical-offset="2430" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="340" selection-end="340" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="576" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/SpriteManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="58" selection-start="257" selection-end="257" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="306" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/HorizontalConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/VerticalConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="303" selection-end="303" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/DownConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="461" selection-end="461" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/UpLeftConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="25" selection-start="0" selection-end="1505" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="864" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/DownLeftConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="47" selection-start="0" selection-end="1464" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="828" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/DownRightConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="72" selection-start="1455" selection-end="1455" vertical-scroll-proportion="0.0" vertical-offset="352" max-vertical-offset="828" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/UpRightConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="72" selection-start="1473" selection-end="1473" vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="846" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TDownConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="29" selection-start="245" selection-end="1497" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="774" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TLeftConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="36" selection-start="0" selection-end="1451" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="738" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TRightConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="16" selection-start="1331" selection-end="1331" vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="738" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/UpConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="15" selection-start="455" selection-end="455" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TUpConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="25" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0" vertical-offset="54" max-vertical-offset="774" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/WallPosition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="9" selection-start="344" selection-end="344" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="468" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/RightConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="37" selection-start="294" selection-end="294" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="378" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="50" selection-start="762" selection-end="762" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="630" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="801" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="108" max-vertical-offset="1044" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/SpriteManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="41" selection-start="594" selection-end="594" vertical-scroll-proportion="0.0" vertical-offset="36" max-vertical-offset="828" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/CornerWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="7" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="918" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/Wall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="13" selection-start="3703" selection-end="3703" vertical-scroll-proportion="0.0" vertical-offset="1658" max-vertical-offset="2358" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="34" selection-start="2313" selection-end="2313" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="1422" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/Hunter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="35" selection-start="495" selection-end="495" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="2340" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SmartPacMan.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="518" />
-      </provider>
-    </entry>
-    <entry file="jar:///usr/java/jdk1.7.0_45/jre/lib/jfxrt.jar!/javafx/scene/control/CheckBox.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="163" selection-end="163" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/optionChooser/formstyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="1" selection-start="78" selection-end="78" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="432" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/RectangleWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="37" selection-start="806" selection-end="806" vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="1008" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/LeftConnectedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="25" selection-start="498" selection-end="498" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="396" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/optionChooser/optionChooser.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="40" selection-end="40" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1278" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/WallFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="9" selection-start="2328" selection-end="2328" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1152" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="18" selection-start="151" selection-end="151" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="684" />
-      </provider>
-    </entry>
-    <entry file="jar:///usr/java/jdk1.7.0_45/src.zip!/java/lang/Override.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="18" selection-start="971" selection-end="971" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="306" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/Solutionner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="12" selection-start="247" selection-end="247" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="486">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/Sprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="39" selection-start="446" selection-end="446" vertical-scroll-proportion="0.0" vertical-offset="2" max-vertical-offset="504">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/MainChooser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="264" selection-end="264" vertical-scroll-proportion="0.0" vertical-offset="3" max-vertical-offset="504">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/optionChooser/optionChooserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="18" selection-start="1480" selection-end="1480" vertical-scroll-proportion="1.2739018" vertical-offset="281" max-vertical-offset="954">
+        <state line="38" column="31" selection-start="718" selection-end="718" vertical-scroll-proportion="0.0" vertical-offset="479" max-vertical-offset="2826">
           <folding>
-            <element signature="e#1351#1517#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="58" selection-start="309" selection-end="309" vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="432">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/Red.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/Blue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="24" selection-start="395" selection-end="395" vertical-scroll-proportion="0.0" vertical-offset="63" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/PowerBall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="30" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0" vertical-offset="369" max-vertical-offset="774">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/GameWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="80" column="0" selection-start="2438" selection-end="2438" vertical-scroll-proportion="0.0" vertical-offset="1041" max-vertical-offset="1962">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/PacMan.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="137" column="9" selection-start="4057" selection-end="4057" vertical-scroll-proportion="0.0" vertical-offset="2241" max-vertical-offset="2628">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="8" selection-start="2046" selection-end="2046" vertical-scroll-proportion="0.0" vertical-offset="603" max-vertical-offset="4284">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/GeneticSolutionner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="53" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/CyclicBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="40" selection-start="158" selection-end="158" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
-          <folding>
-            <element signature="docComment;method#CyclicBoard#0;class#CyclicBoard#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/RecursifSolutioner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="165" column="36" selection-start="4583" selection-end="4583" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3078">
-          <folding>
-            <element signature="e#4609#4610#0" expanded="true" />
+            <element signature="docComment;field#start#0;class#AStarSolutionner#0" expanded="true" />
+            <element signature="docComment;field#end#0;class#AStarSolutionner#0" expanded="true" />
+            <element signature="docComment;method#AStarSolutionner#0;class#AStarSolutionner#0" expanded="true" />
+            <element signature="docComment;method#setStart#0;class#AStarSolutionner#0" expanded="true" />
+            <element signature="docComment;method#setEnd#0;class#AStarSolutionner#0" expanded="true" />
+            <element signature="docComment;field#x#0;class#Node#0;class#AStarSolutionner#0" expanded="true" />
+            <element signature="docComment;field#y#0;class#Node#0;class#AStarSolutionner#0" expanded="true" />
+            <element signature="docComment;method#Node#0;class#Node#0;class#AStarSolutionner#0" expanded="true" />
+            <element signature="docComment;method#getOutNodes#0;class#Node#0;class#AStarSolutionner#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="29" selection-start="794" selection-end="794" vertical-scroll-proportion="0.0" vertical-offset="299" max-vertical-offset="972">
+        <state line="41" column="0" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="1098" max-vertical-offset="2664">
+          <folding>
+            <element signature="docComment;field#startX#0;class#Board#0" expanded="true" />
+            <element signature="docComment;field#startY#0;class#Board#0" expanded="true" />
+            <element signature="docComment;field#maze#0;class#Board#0" expanded="true" />
+            <element signature="docComment;field#succList#0;class#Board#0" expanded="true" />
+            <element signature="docComment;field#endPoint#0;class#Board#0" expanded="true" />
+            <element signature="docComment;method#getBoard#0;class#Board#0" expanded="true" />
+            <element signature="docComment;method#getStartPoint#0;class#Board#0" expanded="true" />
+            <element signature="docComment;method#getEndPoint#0;class#Board#0" expanded="true" />
+            <element signature="docComment;method#calcSuccessorList#0;class#Board#0" expanded="true" />
+            <element signature="docComment;method#getSuccList#0;class#Board#0" expanded="true" />
+            <element signature="docComment;method#setEaten#0;class#Board#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/CyclicBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="24" selection-start="2321" selection-end="2321" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2124">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/Direction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="11" selection-start="288" selection-end="288" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="414">
+          <folding>
+            <element signature="docComment;field#UP#0;class#Direction#0" expanded="true" />
+            <element signature="docComment;field#LEFT#0;class#Direction#0" expanded="true" />
+            <element signature="docComment;field#RIGHT#0;class#Direction#0" expanded="true" />
+            <element signature="docComment;field#DOWN#0;class#Direction#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/GeneticSolutionner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1154" selection-end="1154" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882">
+          <folding>
+            <element signature="docComment;method#GeneticSolutionner#0;class#GeneticSolutionner#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/PacManBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="65" selection-start="736" selection-end="736" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="72" selection-start="1566" selection-end="1566" vertical-scroll-proportion="0.0" vertical-offset="659" max-vertical-offset="1332">
+          <folding>
+            <element signature="docComment;field#x#0;class#Point#0" expanded="true" />
+            <element signature="docComment;field#y#0;class#Point#0" expanded="true" />
+            <element signature="docComment;method#Point#0;class#Point#0" expanded="true" />
+            <element signature="docComment;method#opposite#0;class#Point#0" expanded="true" />
+            <element signature="docComment;method#equals#0;class#Point#0" expanded="true" />
+            <element signature="docComment;method#getDistance#0;class#Point#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/Solutionner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="59" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0" vertical-offset="101" max-vertical-offset="774">
+          <folding>
+            <element signature="docComment;field#board#0;class#Solutionner#0" expanded="true" />
+            <element signature="docComment;method#getPath#0;class#Solutionner#0" expanded="true" />
+            <element signature="docComment;field#path#0;class#Solutionner#0" expanded="true" />
+            <element signature="docComment;method#Solutionner#0;class#Solutionner#0" expanded="true" />
+            <element signature="docComment;method#run#0;class#Solutionner#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/PrimsBoard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="29" selection-start="646" selection-end="646" vertical-scroll-proportion="0.5116279" vertical-offset="108" max-vertical-offset="1494">
+        <state line="21" column="29" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1656">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/board/RecursifSolutioner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="8" selection-start="2233" selection-end="2233" vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="3528">
+          <folding>
+            <element signature="docComment;method#RecursifSolutioner#0;class#RecursifSolutioner#0" expanded="true" />
+            <element signature="docComment;method#RecursifSolutioner#1;class#RecursifSolutioner#0" expanded="true" />
+            <element signature="docComment;method#solved#0;class#RecursifSolutioner#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/genetic/CrossBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="828">
+          <folding>
+            <element signature="docComment;method#cross#0;class#CrossBehaviour#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/genetic/FitnessBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="0" selection-start="1940" selection-end="1940" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="1368">
+          <folding>
+            <element signature="docComment;field#ALPHA#0;class#FitnessBehaviour#0" expanded="true" />
+            <element signature="docComment;field#MOB_FACTOR#0;class#FitnessBehaviour#0" expanded="true" />
+            <element signature="docComment;field#PATH_LEN_FACTOR#0;class#FitnessBehaviour#0" expanded="true" />
+            <element signature="docComment;method#computeFitness#0;class#FitnessBehaviour#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/genetic/ImprovementBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="4" selection-start="4084" selection-end="4118" vertical-scroll-proportion="0.0" vertical-offset="1662" max-vertical-offset="2322">
+          <folding>
+            <element signature="docComment;class#ImprovementBehaviour#0" expanded="false" />
+            <element signature="docComment;method#replace#0;class#ImprovementBehaviour#0" expanded="true" />
+            <element signature="docComment;method#improve#0;class#ImprovementBehaviour#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/genetic/Individual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="191" column="0" selection-start="4571" selection-end="4571" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="4374">
+          <folding>
+            <element signature="docComment;class#Individual#0" expanded="false" />
+            <element signature="docComment;field#UP#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;field#LEFT#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;field#RIGHT#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;field#DOWN#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#getPath#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#Individual#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#getRandomDirection#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#fillBlank#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#getFitnessScore#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#cross#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#mutate#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#improve#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#getGenome#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#getDiversity#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#getPowerballEaten#0;class#Individual#0" expanded="true" />
+            <element signature="docComment;method#PathCalculator#0;class#PathCalculator#0;class#Individual#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/genetic/MutateBehaviour.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="33" selection-start="854" selection-end="854" vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="864">
+          <folding>
+            <element signature="docComment;method#mutate#0;class#MutateBehaviour#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/genetic/Population.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="5" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.0" vertical-offset="360" max-vertical-offset="2412">
+          <folding>
+            <element signature="docComment;field#NMB_VILLAGE#0;class#Population#0" expanded="true" />
+            <element signature="docComment;field#VILLAGE_SIZE#0;class#Population#0" expanded="true" />
+            <element signature="docComment;method#Population#0;class#Population#0" expanded="true" />
+            <element signature="docComment;method#getAverageDiversity#0;class#Population#0" expanded="true" />
+            <element signature="docComment;method#getAverageScore#0;class#Population#0" expanded="true" />
+            <element signature="docComment;method#getGeneration#0;class#Population#0" expanded="true" />
+            <element signature="docComment;method#getFitest#0;class#Population#0" expanded="true" />
+            <element signature="docComment;method#ComputeStats#0;class#Population#0" expanded="true" />
+            <element signature="docComment;method#nextGeneration#0;class#Population#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/genetic/Sort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="13" selection-start="220" selection-end="220" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="936">
+          <folding>
+            <element signature="docComment;field#rand#0;class#Sort#0" expanded="true" />
+            <element signature="docComment;method#QuickSort#0;class#Sort#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/genetic/Vector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="128" selection-end="128" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="342">
+          <folding>
+            <element signature="docComment;field#x#0;class#Vector#0" expanded="true" />
+            <element signature="docComment;field#y#0;class#Vector#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/genetic/Village.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="24" selection-start="1632" selection-end="1632" vertical-scroll-proportion="0.0" vertical-offset="918" max-vertical-offset="4572">
+          <folding>
+            <element signature="docComment;method#Village#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#Village#1;class#Village#0" expanded="true" />
+            <element signature="docComment;method#getFitest#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#getSize#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#getVillagers#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#setVillages#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#getAverageScore#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#getAverageDiversity#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#computeStats#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#getThread#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#NextGenerationThread#0;class#NextGenerationThread#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#eliminWeakest#0;class#NextGenerationThread#0;class#Village#0" expanded="true" />
+            <element signature="docComment;method#cross#0;class#NextGenerationThread#0;class#Village#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/Blue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="8" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="558">
+          <folding>
+            <element signature="docComment;method#Blue#0;class#Blue#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/Hunter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="160" column="37" selection-start="4097" selection-end="4097" vertical-scroll-proportion="0.0" vertical-offset="2202" max-vertical-offset="3042">
+          <folding>
+            <element signature="docComment;field#DIMENSION#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;field#SPEED_FACTOR#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;field#MOB_COLOR#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;field#board#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;field#path#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;field#position#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;field#initPosForPath#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;field#target#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;method#Hunter#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;method#constructNode#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;method#computePath#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;method#getPath#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;method#getPosition#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;method#getInitPosForPath#0;class#Hunter#0" expanded="true" />
+            <element signature="docComment;method#getColor#0;class#Hunter#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/PacMan.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="210" column="20" selection-start="5235" selection-end="5235" vertical-scroll-proportion="0.0" vertical-offset="2927" max-vertical-offset="3600">
+          <folding>
+            <element signature="docComment;field#PACMAN_DIMENSION#0;class#PacMan#0" expanded="true" />
+            <element signature="docComment;field#PACMAN_SPEED_FACTOR#0;class#PacMan#0" expanded="true" />
+            <element signature="docComment;method#PacMan#0;class#PacMan#0" expanded="true" />
+            <element signature="docComment;method#getPos#0;class#PacMan#0" expanded="true" />
+            <element signature="docComment;method#setRed#0;class#PacMan#0" expanded="true" />
+            <element signature="docComment;method#move#0;class#PacMan#0" expanded="true" />
+            <element signature="docComment;method#stop#0;class#PacMan#0" expanded="true" />
+            <element signature="docComment;method#handleDeath#0;class#PacMan#0" expanded="true" />
+            <element signature="docComment;method#getColor#0;class#PacMan#0" expanded="true" />
+            <element signature="docComment;method#getPath#0;class#PacMan#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/PowerBall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="30" selection-start="1109" selection-end="1109" vertical-scroll-proportion="0.0" vertical-offset="245" max-vertical-offset="1008">
+          <folding>
+            <element signature="docComment;method#PowerBall#0;class#PowerBall#0" expanded="true" />
+            <element signature="docComment;method#handleDeath#0;class#PowerBall#0" expanded="true" />
+            <element signature="docComment;method#isDead#0;class#PowerBall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/mobs/Red.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="24" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0" vertical-offset="11" max-vertical-offset="684">
+          <folding>
+            <element signature="docComment;method#Red#0;class#Red#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/Wall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="162" column="0" selection-start="4262" selection-end="4262" vertical-scroll-proportion="0.0" vertical-offset="870" max-vertical-offset="2934">
+          <folding>
+            <element signature="docComment;field#wallDimension#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#canva#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#wallWidth#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#posX#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#posY#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#wallIncrement#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#wallConstructed#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#lineLeft#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#lineRight#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#lineUp#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#lineDown#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;field#COLOR#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;method#Wall#0;class#Wall#0" expanded="true" />
+            <element signature="docComment;method#constructLine#0;class#Wall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/WallPosition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="51" column="12" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="335" max-vertical-offset="1008">
+          <folding>
+            <element signature="docComment;field#LEFT#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#UP#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#RIGHT#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#DOWN#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#HORIZONTAL#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#VERTICAL#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#CROSS#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#CORNERUPLEFT#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#CORNERUPRIGHT#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#CORNERDOWNRIGHT#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#CORNERDOWNLEFT#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#TLEFT#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#TUP#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#TRIGHT#0;class#WallPosition#0" expanded="true" />
+            <element signature="docComment;field#TDOWN#0;class#WallPosition#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/WallFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="9" selection-start="2526" selection-end="2526" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1314">
+          <folding>
+            <element signature="docComment;method#buildWall#0;class#WallFactory#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/VerticalConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="140" selection-end="140" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <folding>
+            <element signature="docComment;method#VerticalConnectedWall#0;class#VerticalConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/UpRightConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="172" selection-end="172" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="972">
+          <folding>
+            <element signature="docComment;method#UpRightConnectedWall#0;class#UpRightConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/UpConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="15" selection-start="619" selection-end="619" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <folding>
+            <element signature="docComment;method#UpConnectedWall#0;class#UpConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/UpLeftConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
+          <folding>
+            <element signature="docComment;method#UpLeftConnectedWall#0;class#UpLeftConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TUpConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="25" selection-start="776" selection-end="776" vertical-scroll-proportion="0.0" vertical-offset="180" max-vertical-offset="900">
+          <folding>
+            <element signature="docComment;method#TUpConnectedWall#0;class#TUpConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TRightConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TLeftConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="756">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TDownConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+          <folding>
+            <element signature="docComment;method#TDownConnectedWall#0;class#TDownConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/TConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1242">
+          <folding>
+            <element signature="docComment;field#xBoundBig#0;class#TConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundBig#0;class#TConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#xBoundSmall#0;class#TConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundSmall#0;class#TConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#widthBig#0;class#TConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#heightBig#0;class#TConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#widthSmall#0;class#TConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#heightSmall#0;class#TConnectedWall#0" expanded="true" />
+            <element signature="docComment;method#TConnectedWall#0;class#TConnectedWall#0" expanded="true" />
+            <element signature="docComment;method#constructCanva#0;class#TConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/RectangleWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="37" selection-start="1391" selection-end="1391" vertical-scroll-proportion="0.0" vertical-offset="882" max-vertical-offset="1728">
+          <folding>
+            <element signature="docComment;field#xBoundMin#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;field#xBoundMax#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundMin#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundMax#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;field#width#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;field#height#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;field#checkLeft#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;field#checkRight#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;field#checkUp#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;field#checkDown#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;method#RectangleWall#0;class#RectangleWall#0" expanded="true" />
+            <element signature="docComment;method#constructCanva#0;class#RectangleWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/RightConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <folding>
+            <element signature="docComment;method#RightConnectedWall#0;class#RightConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/LeftConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="25" selection-start="664" selection-end="664" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="522">
+          <folding>
+            <element signature="docComment;method#LeftConnectedWall#0;class#LeftConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/HorizontalConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <folding>
+            <element signature="docComment;method#HorizontalConnectedWall#0;class#HorizontalConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/DownRightConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
+          <folding>
+            <element signature="docComment;method#DownRightConnectedWall#0;class#DownRightConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/DownLeftConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="954">
+          <folding>
+            <element signature="docComment;method#DownLeftConnectedWall#0;class#DownLeftConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/DownConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="504">
+          <folding>
+            <element signature="docComment;method#DownConnectedWall#0;class#DownConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/CrossConnectedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="13" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1548">
+          <folding>
+            <element signature="docComment;field#xBoundVert#0;class#CrossConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundVert#0;class#CrossConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#xBoundHor#0;class#CrossConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundHor#0;class#CrossConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#longDist#0;class#CrossConnectedWall#0" expanded="true" />
+            <element signature="docComment;field#shortDist#0;class#CrossConnectedWall#0" expanded="true" />
+            <element signature="docComment;method#CrossConnectedWall#0;class#CrossConnectedWall#0" expanded="true" />
+            <element signature="docComment;method#constructCanva#0;class#CrossConnectedWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/wall/CornerWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="165" selection-end="165" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1962">
+          <folding>
+            <element signature="docComment;field#xBoundMinMain#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#xBoundMaxMain#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundMinMain#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundMaxMain#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#xBoundMinSmall#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#xBoundMaxSmall#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundMinSmall#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#yBoundMaxSmall#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#checkLeft#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#checkRight#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#checkUp#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#checkDown#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#widthMain#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#heightMain#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#widthSmall#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;field#heightSmall#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;method#CornerWall#0;class#CornerWall#0" expanded="true" />
+            <element signature="docComment;method#constructCanva#0;class#CornerWall#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/PacManWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="35" selection-start="2443" selection-end="2443" vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="4644">
+          <folding>
+            <element signature="docComment;method#PacManWorld#0;class#PacManWorld#0" expanded="true" />
+            <element signature="docComment;method#buildMobs#0;class#PacManWorld#0" expanded="true" />
+            <element signature="docComment;method#createWall#0;class#PacManWorld#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="33" selection-start="1392" selection-end="1392" vertical-scroll-proportion="0.0" vertical-offset="1068" max-vertical-offset="1854">
+          <folding>
+            <element signature="docComment;field#node#0;class#Path#0" expanded="true" />
+            <element signature="docComment;method#Path#0;class#Path#0" expanded="true" />
+            <element signature="docComment;method#update#0;class#Path#0" expanded="true" />
+            <element signature="docComment;method#renderPath#0;class#Path#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/pacman/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="38" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <folding>
+            <element signature="docComment;class#Main#0" expanded="true" />
+            <element signature="docComment;method#main#0;class#Main#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/Sprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
+          <folding>
+            <element signature="docComment;field#animations#0;class#Sprite#0" expanded="true" />
+            <element signature="docComment;field#node#0;class#Sprite#0" expanded="true" />
+            <element signature="docComment;field#vX#0;class#Sprite#0" expanded="true" />
+            <element signature="docComment;field#vY#0;class#Sprite#0" expanded="true" />
+            <element signature="docComment;field#isDead#0;class#Sprite#0" expanded="true" />
+            <element signature="docComment;method#update#0;class#Sprite#0" expanded="true" />
+            <element signature="docComment;method#getDirection#0;class#Sprite#0" expanded="true" />
+            <element signature="docComment;method#collide#0;class#Sprite#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/SpriteManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="152" selection-end="152" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1476">
+          <folding>
+            <element signature="docComment;method#getAllSprites#0;class#SpriteManager#0" expanded="true" />
+            <element signature="docComment;method#addSprites#0;class#SpriteManager#0" expanded="true" />
+            <element signature="docComment;method#removeSprites#0;class#SpriteManager#0" expanded="true" />
+            <element signature="docComment;method#getSpritesToBeRemoved#0;class#SpriteManager#0" expanded="true" />
+            <element signature="docComment;method#addSpritesToBeRemoved#0;class#SpriteManager#0" expanded="true" />
+            <element signature="docComment;method#getCollisionsToCheck#0;class#SpriteManager#0" expanded="true" />
+            <element signature="docComment;method#resetCollisionsToCheck#0;class#SpriteManager#0" expanded="true" />
+            <element signature="docComment;method#cleanUpSprites#0;class#SpriteManager#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/lpostula/gameengine/GameWorld.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="66" column="6" selection-start="1995" selection-end="1995" vertical-scroll-proportion="0.6419019" vertical-offset="486" max-vertical-offset="3510">
+          <folding>
+            <element signature="docComment;method#GameWorld#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#buildAndSetGameLoop#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#updatePath#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#beginGameLoope#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#updateSprites#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#handleUpdate#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#checkCollisions#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#handleCollision#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#cleanupSprites#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#getFramesPerSecond#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#getWindowTitle#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#getGameLoop#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#setGameLoop#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#getSpriteManager#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#getGameSurface#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#setGameSurface#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#getSceneNodes#0;class#GameWorld#0" expanded="true" />
+            <element signature="docComment;method#setSceneNodes#0;class#GameWorld#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1326,6 +1834,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>jgap</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

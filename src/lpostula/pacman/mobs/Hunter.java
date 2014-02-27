@@ -15,17 +15,47 @@ import java.util.List;
  * Documentation de la classe Hunter
  */
 public abstract class Hunter extends Sprite {
+    /**
+     * The constant DIMENSION.
+     */
     public static final int DIMENSION = 7;
-    public double SPEED_FACTOR = 10;
+    /**
+     * The SPEED _ fACTOR.
+     */
+    public double SPEED_FACTOR = 8;
+    /**
+     * The MOB _ cOLOR.
+     */
     protected Color MOB_COLOR = Color.RED;
     private int direction = 4;
+    /**
+     * The Board.
+     */
     protected Board board;
     private int step = 0;
+    /**
+     * The Path.
+     */
     protected List<Integer> path = new ArrayList<>();
+    /**
+     * The Position.
+     */
     protected Point position = new Point(-1, -1, null);
+    /**
+     * The Init pos for path.
+     */
     protected Point initPosForPath = new Point(-1, -1, null);
+    /**
+     * The Target.
+     */
     protected PacMan target;
 
+    /**
+     * Instantiates a new Hunter.
+     *
+     * @param board  the board
+     * @param target the target
+     */
     public Hunter(Board board, PacMan target) {
         this.board = board;
         this.vX = this.vY = board.getStepSize() / SPEED_FACTOR;
@@ -33,6 +63,9 @@ public abstract class Hunter extends Sprite {
 
     }
 
+    /**
+     * Construct node.
+     */
     protected void constructNode() {
         Circle sphere = new Circle(DIMENSION);
         sphere.setFill(MOB_COLOR);
@@ -43,17 +76,14 @@ public abstract class Hunter extends Sprite {
 
     @Override
     public void update() {
-        position.x = (int) Math.floor(node.getTranslateX() / board.getStepSize());
-        position.y = (int) Math.floor(node.getTranslateY() / board.getStepSize());
         if (step % SPEED_FACTOR == 0) {
             computePath();
-            initPosForPath.x = position.x;
-            initPosForPath.y = position.y;
-            if (!path.isEmpty()) {
+            if (path.size() > 0) {
                 direction = path.get(0);
-                if (direction == -1) {
-                }
             }
+        }
+        if ((step % (SPEED_FACTOR * 4) == 0)) {
+            direction = 4;
         }
         ++step;
         int modX = 0;
@@ -84,6 +114,9 @@ public abstract class Hunter extends Sprite {
         node.setTranslateY(node.getTranslateY() + (modY * vY));
     }
 
+    /**
+     * Compute path.
+     */
     protected abstract void computePath();
 
     @Override
@@ -108,18 +141,40 @@ public abstract class Hunter extends Sprite {
         } else return other.collide(this);
     }
 
+    /**
+     * Gets path.
+     *
+     * @return the path
+     */
     public List<Integer> getPath() {
         return path;
     }
 
+    /**
+     * Gets position.
+     *
+     * @return the position
+     */
     public Point getPosition() {
-        return position;
+        int x = (int) Math.floor(node.getTranslateX() / board.getStepSize());
+        int y = (int) Math.floor(node.getTranslateY() / board.getStepSize());
+        return new Point(x, y, null);
     }
 
+    /**
+     * Gets init pos for path.
+     *
+     * @return the init pos for path
+     */
     public Point getInitPosForPath() {
         return initPosForPath;
     }
 
+    /**
+     * Gets color.
+     *
+     * @return the color
+     */
     public Color getColor() {
         return MOB_COLOR;
     }

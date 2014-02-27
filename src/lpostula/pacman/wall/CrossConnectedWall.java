@@ -8,13 +8,38 @@ import javafx.scene.shape.Line;
  * Documentation de la classe CrossConnectedWall
  */
 public class CrossConnectedWall extends Wall {
+    /**
+     * The X bound vert.
+     */
     protected double xBoundVert;
+    /**
+     * The Y bound vert.
+     */
     protected double yBoundVert;
+    /**
+     * The X bound hor.
+     */
     protected double xBoundHor;
+    /**
+     * The Y bound hor.
+     */
     protected double yBoundHor;
+    /**
+     * The Long dist.
+     */
     protected double longDist;
+    /**
+     * The Short dist.
+     */
     protected double shortDist;
 
+    /**
+     * Instantiates a new Cross connected wall.
+     *
+     * @param dimension the dimension
+     * @param posX      the pos x
+     * @param posY      the pos y
+     */
     public CrossConnectedWall(double dimension, double posX, double posY) {
         super(dimension, posX, posY);
         xBoundVert = wallIncrement;
@@ -28,6 +53,9 @@ public class CrossConnectedWall extends Wall {
         constructCanva();
     }
 
+    /**
+     * Construct canva.
+     */
     public void constructCanva() {
         Canvas canva = new Canvas(wallDimension, wallDimension);
         canva.getGraphicsContext2D().setFill(COLOR);

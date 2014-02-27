@@ -17,19 +17,62 @@ import java.util.List;
  * Documentation de la classe Wall
  */
 public abstract class Wall extends Sprite {
+    /**
+     * The Wall dimension.
+     */
     protected double wallDimension;
+    /**
+     * The Canva.
+     */
     protected Canvas canva;
+    /**
+     * The Wall width.
+     */
     protected double wallWidth;
+    /**
+     * The Pos x.
+     */
     protected double posX;
+    /**
+     * The Pos y.
+     */
     protected double posY;
+    /**
+     * The Wall increment.
+     */
     protected double wallIncrement;
+    /**
+     * The Wall constructed.
+     */
     protected boolean wallConstructed;
+    /**
+     * The Line left.
+     */
     protected List<Line> lineLeft = new ArrayList<Line>();
+    /**
+     * The Line right.
+     */
     protected List<Line> lineRight = new ArrayList<Line>();
+    /**
+     * The Line up.
+     */
     protected List<Line> lineUp = new ArrayList<Line>();
+    /**
+     * The Line down.
+     */
     protected List<Line> lineDown = new ArrayList<Line>();
+    /**
+     * The constant COLOR.
+     */
     protected static final Color COLOR = Color.DIMGREY;
 
+    /**
+     * Instantiates a new Wall.
+     *
+     * @param dimension the dimension
+     * @param x         the x
+     * @param y         the y
+     */
     public Wall(double dimension, double x, double y) {
         //we will draw the path of every wall
         wallDimension = dimension;
@@ -74,6 +117,9 @@ public abstract class Wall extends Sprite {
 
     }
 
+    /**
+     * Construct line.
+     */
     public void constructLine() {
     }
 
