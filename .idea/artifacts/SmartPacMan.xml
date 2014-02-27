@@ -3,11 +3,11 @@
     <output-path>$PROJECT_DIR$/out/artifacts/SmartPacMan</output-path>
     <properties id="javafx-properties">
       <options>
-        <option name="appClass" value="lpostula.Main" />
+        <option name="appClass" value="lpostula.pacman.Main" />
         <option name="description" value="" />
         <option name="htmlParamFile" value="" />
         <option name="paramFile" value="" />
-        <option name="title" value="" />
+        <option name="title" value="SmartPacMan" />
         <option name="vendor" value="" />
       </options>
     </properties>
