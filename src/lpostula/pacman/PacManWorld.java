@@ -135,10 +135,10 @@ public class PacManWorld extends GameWorld {
     /**
      * Create wall.
      *
-     * @param board the board
-     * @param width the width
+     * @param board  the board
+     * @param width  the width
      * @param height the height
-     * @param size the size
+     * @param size   the size
      */
     public void createWall(Board board, int width, int height, double size) {
         int[][] maze = board.getBoard();

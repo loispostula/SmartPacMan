@@ -63,7 +63,7 @@ public class Path {
      *
      * @param startX the start x
      * @param startY the start y
-     * @param skip the skip
+     * @param skip   the skip
      */
     public void renderPath(int startX, int startY, int skip) {
         int x = startX;
